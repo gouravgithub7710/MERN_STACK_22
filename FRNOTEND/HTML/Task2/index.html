@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Anthology</title>
+</head>
+<style>
+  body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+  }
+  span {  
+    background-color:blue;
+    color: white;
+    display: flex;
+    justify-content: end;
+    padding: 11px ;
+  }
+  header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: black;
+    padding: 20px 40px;
+  }
+  header img {
+    height: 40px;
+  }
+  nav ul {
+    list-style: none;
+    display: flex;
+    margin: 0;
+    padding: 0;
+  }
+  nav ul li {
+    margin: 0 15px;
+  }
+  nav ul li a {
+    color: black;
+    text-decoration: none;
+    font-weight: bold;
+  }
+  Button {
+    background-color: #ff6600;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+    font-weight: bold;
+  }
+  video {
+    width: 100%;
+    height: auto;
+    display: block;
+  }
+#product-cards{
+  margin-top: 60px;
+  margin-bottom: 20px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+}
+  .product-card{
+    height: 350px;
+    width: 250px;
+    font-size: large;
+    
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+  }
+  .article{
+    height: 365px;
+    width: 365px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+    border: 1px solid lightgray;
+    background-color: aliceblue;
+    &:hover {
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+
+    }
+  }
+#article-cards{
+  margin-top: 40px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  
+}
+.whats-new{
+  padding: 40px;
+  margin-top: 20px; 
+}
+  .discover-link {
+  display: inline-flex;
+  align-items: center;
+  font-size: 16px;
+  color: #0d6efd;
+  text-decoration: none;
+  gap: 4px;
+  font-weight: bold;
+}
+  
+ #home-banner {
+  position: absolute;
+  top: 20%;
+  color: white;
+  max-width: 50%;
+  background-color: rgba(12, 43, 89, 0.5); 
+  background-size: cover;
+  padding: 30px;
+  background-repeat: no-repeat;
+  background-position: 50%; 
+  height: 650px;
+}
+
+#home-banner h1{
+  padding-bottom: 30px;
+  padding-left: 40px;
+  font-size: 65px;
+  margin-bottom: 20px;
+  font-weight:900;
+  max-width: 500px;
+  
+}
+#home-banner p{
+  font-size: 17px;
+  margin-bottom: 30px;
+  max-width: 390px;
+  padding-left: 40px;
+  align-items: center;
+  line-height: 1.5;
+
+}
+#home-banner Button{
+  margin-left: 40px;
+  margin-top: 30px;
+  padding: 15px 30px;
+  font-size: 18px;
+  color: white;
+  background-color: rgba(12, 43, 89, 0.5);
+  border: 2px solid mediumslateblue;
+  
+  &:hover {
+    background-color: mediumslateblue;
+  }
+}
+.com-and-sup{
+  font-size: 14px;
+  padding-right: 40px;
+  font-weight: bold;
+}
+
+
+  
+</style>
+<body>
+  <section>
+    <span class="com-and-sup">Community and Support</span>
+  <header>
+    <img src="img/anthology-logo-black.svg" alt="">
+    <nav>
+      <ul>
+        <li><a href="index.html">About Us</a></li>
+        <li><a href="about.html">Solutions</a></li>
+        <li><a href="contact.html">Services</a></li>
+        <li><a href="contact.html">Resources</a></li>
+        <li><a href="contact.html">Success Stories</a></li>
+        <li><a href="contact.html">Partners</a></li>
+      </ul>
+    </nav>
+    <Button>Contact Us</Button>
+  </header>
+  </section>
+
+  <section>
+    <div>
+    <video autoplay muted loop>
+    <source src="https://player.vimeo.com/progressive_redirect/playback/1118153076/rendition/1080p/file.mp4?loc=external&log_user=0&signature=cc9f252eb25cbc6c0035d7fa34e4ed15001c0f925ce8ae2ceedc16bfb11e7763" type="video/mp4">
+  </video>
+  <div id="home-banner">
+    <h1>Experience the Power of Together</h1>
+    <p>At Anthology, we believe in the power of together. Institutions, educators, and learners with the right technology and the right technology partner have exponentially greater power to succeed. To nurture sustainable career paths. To open doors and create life-changing opportunities around the world.</p>
+    <Button>Get to Know Us</Button>
+  </div>
+  </div>
+  </section>
+
+  <section>
+    <div id="product-cards">
+        <div class="product-card">
+          <img src="img/blackboard-logo-colored.png" height="30px" alt="">
+          <p>The LMS with built-in AI capabilities that simplifies teaching and engages learners</p>
+           
+          <a href="#" class="discover-link">
+            Discover Blackboard
+            <img src="img/greater-than_ (1).png" alt="arrow" width="16" height="16">
+          </a>
+        </div>
+         <div class="product-card">
+          <img src="img/student-color-black.webp" height="30px" alt="">
+          <p>The SIS that streamlines operations and powers student success at every stage</p>
+           
+          <a href="#" class="discover-link">
+            Discover Anthology Student
+            <img src="img/greater-than_ (1).png"  alt="arrow" width="16" height="16">
+          </a>
+        </div>
+         <div class="product-card">
+          <img src="img/reach-color-black.webp"height="30px" alt="">
+          <p>The CRM that ensures institutional sustainability and strategic growth</p>
+           
+          <a href="#" class="discover-link">
+            Discover Anthology Reach
+            <img src="img/greater-than_ (1).png" alt="arrow" width="16" height="16">
+          </a>
+        </div>
+    </div>
+  </section>
+
+  <section class="whats-new">
+    <h1>What's new</h1>
+
+    <div id="article-cards">
+      <div class="article">
+        <img src="img/blackboard-ai-callout.webp" alt="" height="191px" width="365px">
+        <p>Advance learning through innovative and responsible AI</p>
+        <a href="#" class="discover-link">
+          Learn More 
+          <img src="img/greater-than_ (1).png" alt="arrow" width="16" height="16"> </a>
+      </div>
+      <div class="article">
+        <img src="img/AI-Roadshow-Report-Feature-Image.webp" alt="" height="191px" width="365px">
+        <p>Ethical AI in Action: Trends, insights, and success stories from Anthology's groundbreaking AI roadshow</p>
+        <a href="#" class="discover-link">
+          Learn More
+          <img src="img/greater-than_ (1).png" alt="arrow" width="16" height="16"></a>
+      </div>
+      <div class="article">
+        <img src="img/Accessibility-webinar-Feature-Image.webp" alt="" height="191px" width="365px">
+        <p>Accessibility Strategies to Address the Impact of ADA Title II Updates</p>
+        <a href="#" class="discover-link">
+          Learn More 
+          <img src="img/greater-than_ (1).png" alt="arrow" width="16" height="16"> </a>
+      </div>
+    </div>
+    
+  </section>
+</body>
+</html>
