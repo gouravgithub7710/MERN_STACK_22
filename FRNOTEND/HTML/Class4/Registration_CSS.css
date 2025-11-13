@@ -1,0 +1,42 @@
+body{
+  margin: 0;
+  padding: 0;
+
+}
+#main-div{
+  width: 390px;
+  
+margin: 10% auto;
+ border: solid ;
+}
+#heading{
+ padding-left: 20%;
+ margin-top: -0.3px;
+ background-color:rgb(129, 129, 247);
+ 
+}
+#div-2{
+  padding: 20px;
+  
+}
+#city{
+  width: 49.5%;
+}
+#country{
+  
+  width: 49.3%;
+}
+#button{
+  margin-top: 20px;
+ padding: 10px 0 10px 0;
+width: 100%;
+background-color: rgb(129, 129, 247);
+}
+
+#phone{
+ width: 100%;
+}
+
+#Email{
+ width: 100%;
+}
