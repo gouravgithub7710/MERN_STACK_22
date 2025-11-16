@@ -1,0 +1,80 @@
+*{
+  padding: 0;
+  margin: 0;
+}
+#nav{
+  
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+ font-size: 25px;
+ height: 100px;
+}
+
+.svg{
+  height: 50px;
+  width: 50px;
+  cursor: pointer;
+}
+.a{
+ text-decoration: none;
+ color: black;
+ 
+}
+#logo{
+  font-size: 50px;
+  font-family: Impact, Haettenschweiler, sans-serif;
+}
+
+#home-bg-3{
+  height: 100%;
+  width: 100%;
+  position: relative;
+  z-index: 0;
+  /* top: 100px;
+  left: 0px; */
+}
+ #home-bg-4{
+  width: 100%;
+  position: absolute;
+  z-index: 1;
+  left: 0px;
+  top: 100px;
+}
+
+#home-bg-5{
+  height: 100%;
+   width: 100%;
+  position: absolute;
+  top: 110px;
+  left: 0px;
+  z-index: 2;
+} 
+
+#home-bg-6{
+  height: 100%;
+  width: 100%;
+  position:absolute;
+  z-index: 3;
+  top: 140px;
+  right: 0px;
+}
+
+#home-bg-7{
+  height: 100%;
+  width: 100%;
+  position:absolute;
+  z-index: 4;
+  top: 140px;
+  right: 0px;
+}
+#home-bg-8{
+  height: 10%;
+  width: 10%;
+  position:absolute;
+  z-index: 5;
+  top: 140px;
+  right: 0px;
+}
+
