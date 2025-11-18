@@ -83,7 +83,7 @@
 #bg{
   margin-top:-4px;
   width: 100%;
-  height: 310vh;
+  height: 400vh;
   background-image: url(../MSI/img/bg.jpg);
    background-size: cover;
   background-position: center;
@@ -185,7 +185,7 @@ margin-bottom: 80px;
   width: 100%;
  height: 600px;
 
- margin-bottom: 50px;
+ margin-bottom: 60px;
 }
 
 .buyNow-tab-img{
@@ -218,21 +218,156 @@ border-radius: 5px;
   justify-content: space-around;
   padding:0 100px;
   cursor: pointer;
-  margin-bottom: 100px;
+  margin-bottom: 60px;
 }
 .Lakh-btn{
   color: gold;
   position: relative;
-}
-.Lakh-btn-img img{
-  
-  height: 100px;
-  width: 300px;
   
 }
-.Lakh-btn h1{
-  position: absolute;
-  top: 30px;
- left: 80px;
+.Lakh-btn-txt h1{
+position: absolute;
+top: 19%;
+left: 60px;
+}
 
+.footer-menu-items{
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  cursor: pointer;
+}
+.footer-menu-items p{
+  font-size: 25px;
+}
+.footer-menu-items h1{
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+#footer-menu-item-container{
+display: flex;
+flex-direction: row;
+justify-content: space-around;
+gap: 10px;
+}
+#hr{
+  margin-top: 100px;
+}
+
+#footer{
+  margin-bottom: 20px;
+  margin: 20px 30px 20px 30px;
+ 
+}
+#social-icon{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+
+  margin-bottom: -120px;
+  padding:0 80px 0 80px;
+}
+#social-icon h2{
+  margin-top: 10px;
+}
+
+#social-icon svg{
+  height: 50px;
+  width: 50px;
+  margin-top: -10px;
+  margin-bottom: 25px;
+}
+
+.shop-now-button{
+  cursor: pointer;
+  display: flex;
+  flex-direction: row;
+ background-color: red;
+
+ 
+ border-radius: 40px;
+ 
+ padding: 5px 20px 5px 20px;
+
+}
+.shop-now-button h1{
+ color: white;
+ font-size: 30px;
+ font-weight: 600;
+ width: 200px;
+ align-items: center;
+}
+.shop-now-button svg{
+  margin-top: 2px;
+  height: 30px;
+  width: 30px;
+}
+.shop-now{
+  width: 700px;
+  height: 550px;
+  border: gold solid 2px;
+  border-radius: 5px;
+}
+.shop-now-div-1{
+  display: flex;
+  flex-direction: row;
+  gap: 10px;
+}
+
+.shop-now-div-1 img{
+  width: 300px;
+  height: 250px;
+  margin-top: 150px;
+}
+.shop-now-div-list-div{
+  margin-top: 60px;
+  color: white;
+}
+.shop-now-div-list-div h1{
+  margin-bottom: 40px;
+}
+
+.shop-now-div-list-div li{
+  font-size: 20px;
+  padding: 4px 20px 4px 20px;
+}
+
+.shop-now-button-div{
+  
+  margin-top: 35px;
+  margin-left: 25%;
+}
+
+#shops{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+}
+
+/* #deli-img{
+  position: relative;
+  height: 100px;
+  width: 100px;
+} */
+#deli-bg-img{
+  position: fixed;
+  right: 10%;
+  top: 80%;
+  z-index: 10;
+  cursor: pointer;
+}
+#deli-bg-img img{
+  position: absolute;
+  height: 100px;
+  width: 100px;
+}
+#deli-bg-img:hover{
+ transform: scale(1.2); 
+}
+#deli-upper-img img{
+  position: absolute;
+  top: 18px;
+  left: 13px;
+ height: 70px;
+  width: 70px;
 }
