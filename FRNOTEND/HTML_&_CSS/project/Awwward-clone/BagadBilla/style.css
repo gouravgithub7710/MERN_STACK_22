@@ -208,16 +208,39 @@
 }
 
 .full-box{
-    width: 38%;
-    height: 38%;
-    background-color: black;
+    width: 48%;
+    height: 48%;
 }
 .inner-box{
-
-     width: 34%;
-    height: 34%;
+    background-color: rgb(9, 12, 4);
+    margin: 0 auto;
+    padding: 40px 40px;
+    border: 1px solid black;
+     border-radius: 10px;
+    
 }
 .box-img img{
     width: 100%;
     height: 100%;
+    border: 2px solid rgb(99, 54, 176); 
+    border-radius: 10px;
+}
+.full-box p{
+    font-size: 20px;
+    text-align: center;
+}
+.box-cont-menu{
+    margin-top: 10px;
+    margin-bottom: 10px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-around;
+    width: 300px;
+}
+.section-5{
+    margin-top: 50px;
+    padding:0 30px;
+    display: flex;
+    justify-content: space-between;
 }
