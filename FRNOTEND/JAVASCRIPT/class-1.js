@@ -1,8 +1,6 @@
 // !!!!!!!!!!!!!!!!!!!!!!!!Synchronous Js!!!!!!!!!!!!!!!!
 // agar mera code line by line excute hota hai to use synchronous bolte hai
 
-
-
 // console.log("This is java script class 4");
 
 // !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
@@ -213,7 +211,7 @@ me banaye gaye variable jyada hoti hai
 // x = 19;
 // {
 //     x = 8724;
-   
+
 // }
 
 // function changeValue() {
@@ -229,7 +227,7 @@ me banaye gaye variable jyada hoti hai
 // x = 19;
 // {
 //    var x = 8724;
-   
+
 // }
 
 // function changeValue() {
@@ -243,7 +241,7 @@ me banaye gaye variable jyada hoti hai
 // var x = 19;
 // {
 //     x = 8724;
-   
+
 // }
 
 // function changeValue() {
@@ -275,3 +273,132 @@ me banaye gaye variable jyada hoti hai
 // debugger
 // let x=10;
 // console.log(x)
+
+// !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+
+// Data Types-> Ye bta hai ki aapki value ka type kaisa hai 
+// it is used to tell the type of value
+// 1.primitive Data Type->
+/*
+jo kisi bhi langyage ke sath me aaate hai unhe primitive data typeof.
+inka use karke aap kisi variable me ek time me ek hee value store kar payenge
+ye immutable hote hai.
+// !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+
+Example-> 
+number-> koi bhi variable ke andar agar numeric value hai
+ to us variable ka data number hoga
+ ex-> let x=90 // x ka type number bcs x me numeric value rakhi hai
+
+
+// !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+
+ string-> koi bhi variable kee value agar aap
+ doble quote(""), single quote ('') ya backtics(``) ke andar likhte hai
+ to vah string data type kee category me aata hai. bhale hee aap koi
+ numeric value hee likhe.
+ ex-> let x1="90" // type string
+ let namr='mohan'
+  
+ // !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+
+boolean-> koi bhi variable kee value agar aap
+ true ya false dete hai to use variable ka data type boolean hoga
+
+ ex-> let x1= true // type boolean
+ let namr=false// boolean
+ 
+// !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+
+
+ null-> koi bhi variable jiski value present me nhi hai
+ us variable ko null se initialize keaya jata hai but ye sureity 
+ hai kee future  me us variable me kuch na kuch  value store ho saktihai
+
+
+ ex-> let x1= null // object
+ // !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+
+
+ NaN->H.w
+
+*/
+// !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+
+
+/* 2.Non primitive Data Type-> inko complex data type ya user define data type kahte hai. 
+inka use ek variable me ek time me multiple value store karne ke leaye karte hai.
+
+ex-> array, object, function, IIFE, Date so on.
+*/
+
+// !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+// typeof()-> eska use kisi bhi varible ka data type batane ke leaye karte hai.
+// let x=-10.35;
+// console.log(typeof(x))// number
+// const name1="MOhan"
+// console.log(typeof(name1))// string
+// const name2='MOhan'
+// console.log(typeof(name2))// string
+
+// const name3=`MOhan`
+// console.log(typeof(name3))// string
+
+// const areYouAdult=true;
+// console.log(typeof(areYouAdult))//boolean
+
+// let areYouStuding=false
+// console.log(typeof(areYouStuding))// boolean
+
+
+// let sadiHoGai=null;
+// console.log(typeof(sadiHoGai))// object
+
+// let complexCalculation="mohit"/10;
+// console.log(complexCalculation)
+// console.log(typeof(NaN))
+
+
+// Operators->
+// Arithmetic-> +,-,/,*,%,**
+// console.log("Addition",3+4)//7
+// console.log("Subtraction",13-4)//9
+// console.log("Divition",23/4)//5.75 // 5
+// console.log("Multification",23*4)//92
+// console.log("Modulas",23%4)//3
+// console.log("Power",2**4)//16
+
+// Comparition Operator-> <,>,<=,>=,==,===,!=
+// console.log("Greater than", 3 > 4)//false
+// console.log("less than", 13 < 4)//false
+// console.log("Greater than eqal to", 23 >= 4)//true
+// console.log("less than eqal to", 23 <= 4)//false
+// console.log("double equal to", 24 == "24")//true
+// console.log("tripple equal to", 24 === "24")//false
+// console.log("not equal to", 23 != 45)//true
+// console.log("edge cases=>");
+// console.log("not equal to ye hota hai correct one", "23" != 23)
+
+// console.log("not equal to ye kam use karte hai", "23" !== 23)//H.w
+
+
+// Logical Operator->
+
+// AND
+// console.log(true && true)// true
+// console.log(false && false)// false
+// console.log(false && true)// false
+// console.log(true && false)// false
+
+// OR
+// console.log(true || true)// true
+// console.log(false || true)// true
+// console.log(true || false)// true 
+// console.log(false || false)// false
+
+// Not
+// console.log(!true)//false
+
+
+
+//
