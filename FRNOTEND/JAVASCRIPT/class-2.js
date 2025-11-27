@@ -148,10 +148,10 @@ Ex->*/
 /* !!!!!!!!!!!!!!!!!!!!!!!!!!!! arrow function with no return but store in
 variable and call inside console.log() !!!!!!!!!*/
 
- let multiply=(s,t)=>console.log(s*t);
- let ans=multiply(5,6);
- console.log(ans);
- console.log(multiply(5,6));
+//  let multiply=(s,t)=>console.log(s*t);
+//  let ans=multiply(5,6);
+//  console.log(ans);
+//  console.log(multiply(5,6));
 
 
 /* !!!!!!!!!!!!!!!!!!!!!!!!!!!! arrow function with multiple liens*/
