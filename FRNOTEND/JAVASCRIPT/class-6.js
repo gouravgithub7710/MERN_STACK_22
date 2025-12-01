@@ -4,7 +4,13 @@
 
 //1. Write a program to check whether a number is Even or Odd.
 
+// let num = 35;
 
+// if(num%2==0){
+//   console.log(`Num is even : ${num}`); 
+// }else{
+//   console.log(`Num is odd : ${num}`); 
+// }
 
 // Palindrome----------------------------------------------------------------
 
