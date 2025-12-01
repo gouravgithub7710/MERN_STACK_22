@@ -12,6 +12,17 @@
 //   console.log(`Num is odd : ${num}`); 
 // }
 
+
+//2. Given an integer, check if it is divisible by 5 and 11.
+ 
+// let gnum = 55;
+
+// if(gnum%5==0 || gnum%11==0 ){
+//   console.log(`${gnum} is divisible by 5 and 11.`); 
+// }else{
+//     console.log(`${gnum} is not divisible by 5 and 11.`); 
+// }
+
 // Palindrome----------------------------------------------------------------
 
 // let num = 1221;
