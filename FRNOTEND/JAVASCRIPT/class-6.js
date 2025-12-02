@@ -2,7 +2,7 @@
 
 // � EVEN / ODD
 
-//1. Write a program to check whether a number is Even or Odd.
+//1. Write a program to check whether a number is Even or Odd.----------------------------------
 
 // let num = 35;
 
@@ -13,7 +13,7 @@
 // }
 
 
-//2. Given an integer, check if it is divisible by 5 and 11.
+//2. Given an integer, check if it is divisible by 5 and 11.-----------------------------------
  
 // let gnum = 55;
 
@@ -22,6 +22,20 @@
 // }else{
 //     console.log(`${gnum} is not divisible by 5 and 11.`); 
 // }
+
+//3. Check whether a number is positive, negative, or zero.------------------------------------
+// let num=1;
+
+//   if (num == 0){
+//     console.log("Num is Zero");
+//   }else if(num<0){
+//    console.log("Num is Negative");
+//   }else{
+//     console.log("Num is Positive");
+//   }
+
+//4. Check if a number is divisible by 2, 3, and 5 at the same time.
+
 
 // Palindrome----------------------------------------------------------------
 
