@@ -36,9 +36,30 @@
 
 //4. Check if a number is divisible by 2, 3, and 5 at the same time.
 
+// let gnum = 30;
 
-// Palindrome----------------------------------------------------------------
+// if(gnum%2==0 || gnum%3==0 ||gnum%5==0){
+//   console.log(`${gnum} is divisible.`); 
+// }else{
+//     console.log(`${gnum} is not divisible.`); 
+// }
 
+//🔹 REVERSING & PALINDROME
+
+//5. Reverse a number without using built-in functions
+// let num = 12345;
+// let reverse = 0;
+// let reminder=0;
+
+// while(num>0){
+//   reminder = num%10;
+// reverse = reverse*10+reminder;
+// num = Math.floor(num/10);
+// }
+// console.log(`Reverse num is ${reverse}`); 
+
+
+//6. Check whether a given number is a palindrome.
 // let num = 1221;
 // let result = 0;
 // let cpyNum = num;
@@ -58,16 +79,148 @@
 // }
 
 
-//Reverse Number------------------------------------------------------------------
 
-// let num = 12345;
-// let reverse = 0;
-// let reminder=0;
+//7. Check whether the first and last digit of a number is equal.
 
-// while(num>0){
+// let num = 1231;
+// let lastdigit = num%10;
+// let firstdigit;
+// let rem;
+//  while(num>9)
+//  {
+//     num = Math.floor(num/10);
+//  }
+//   firstdigit = num%10;
+//     if(firstdigit==lastdigit){
+//       console.log("Yes Equal");
+//     }else{
+//         console.log("Not Equal");
+//     }
+
+
+
+//8. Count how many digits in a number
+
+    // let num = 123456;
+    // let reminder;
+    // let count = 0;
+
+    // while(num>0){
+    //   reminder = num%10;
+    //   count++;
+    //   num = Math.floor(num/10);
+    // }
+    // console.log("Total num count is :"+count);
+    
+
+//9. Check whether the reverse of a number is divisible by 3.
+
+// let num = 12;
+
+// let rev = 0;
+// let reminder;
+// while(num>0)
+// {
 //   reminder = num%10;
-// reverse = reverse*10+reminder;
-// num = Math.floor(num/10);
+//   rev=rev*10+reminder;
+//   num = Math.floor(num/10);
 // }
-// console.log(`Reverse num is ${reverse}`); 
+
+// console.log("Reverse Num is :"+rev);
+
+// if(rev%3==0){
+//   console.log(`Yes, ${rev} is Divisible by 3`);
+// } else{
+//   console.log(`Yes, ${rev} is Not Divisible by 3`);
+// }
+
+
+//🔹 DIGIT OPERATIONS
+
+//10. Find the sum of digits of a number.
+
+    // let num = 12345;
+    // let reminder;
+    // let sum = 0;
+
+    // while(num>0){
+    //   reminder = num%10;
+    //   sum=sum+reminder;
+    //   num = Math.floor(num/10);
+    // }
+    // console.log("Total num sum is :"+sum);
+
+
+ // 11. Find the product of digits of a number.
+
+    //  let num = 12345;
+    // let reminder;
+    // let mul=1;
+
+    // while(num>0){
+    //   reminder = num%10;
+    //   mul=mul*reminder;
+    //   num = Math.floor(num/10);
+    // }
+    // console.log("Multiple is :"+mul);
+
+
+//12. Find the largest digit in a number
+
+    // let num = 129345;
+    // let reminder;
+    // let largest = 0;
+
+    // while(num>0){
+    //   reminder = num%10;
+    //   if(largest<reminder){
+    //     largest=reminder;
+    //   }
+    //   num = Math.floor(num/10);
+    // }
+    // console.log("Largest num is :"+largest);
+
+
+//13. Find the smallest digit in a number.
+
+    // let num = 943129345;
+    // let reminder;
+    // let smallest=1000000000000;
+
+    // while(num>0){
+    //   reminder = num%10;
+    //   if(smallest>reminder){
+    //     smallest=reminder;
+    //   }
+    //   num = Math.floor(num/10);
+    // }
+    // console.log("Smallest num is :"+smallest);
+
+
+
+    //14. Print the frequency of each digit in a number.
+
+    //15. Check if digits of the number are strictly increasing (e.g., 1234).
+
+    // let num = 11234;
+    // let str = num.toString();
+    // let isIncresing = true;
+    // for (let i = 0; i < str.length-1; i++) {
+    //   if(str.charAt(i)>=str.charAt(i+1))
+    //     {
+    //       isIncresing = false;
+    //       break;
+    //     }
+    // }
+    // console.log(isIncresing);
+    
+
+//🔹 FACTORIAL & STRONG NUMBERS
+
+//16. Find the factorial of a number.
+
+let num = 123;
+let fact =1;
+
+
 
