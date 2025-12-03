@@ -360,5 +360,27 @@
 // console.log("Count of Zeroes is :"+count);
 
 
+//42. Find difference between sum of even digits and sum of odd digits.
+
+// let num = 123456789;
+// let digit=0;
+// let evenSum=0;
+// let oddSum=0;
+// let difference=0;
+// while(num>0)
+// {
+//     digit=num%10;
+
+//     if(digit%2==0){
+//        evenSum=evenSum+digit;
+//     }else{
+//         oddSum=oddSum+digit;
+//     }
+//     num=Math.floor(num/10);
+// }
+
+// difference=evenSum-oddSum;
+
+// console.log("difference between sum of even digits and sum of odd digits is:"+difference);
 
 
