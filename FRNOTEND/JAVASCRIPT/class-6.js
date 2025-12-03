@@ -219,8 +219,146 @@
 
 //16. Find the factorial of a number.
 
-let num = 123;
-let fact =1;
+// let num = 5;
+// let fact =1;
+// while(num>0){
+//   fact = fact*num;
+//   num = num-1;
+// }
+// console.log("Factorial is :"+fact);
+
+
+
+
+//🔹 PRIME & COMPOSITE
+//20. Check whether a number is prime
+
+// let num = 57;
+
+// if(num<2){
+//     console.log("Num is Less than 1, Enter Greater than 1 num");
+// }
+
+// for(let i=2;i<num;i++)
+// {
+//     if(num%i==0){
+//         console.log(`{num} is not a prime num`);   
+//         break;
+//     }else{
+//         console.log(`{num} is a prime num`);  
+//         break;
+//     }
+// }
+
+
+//21. Print all prime numbers in a given range.
+
+// let num = 30;
+
+// for(let i=2;i<num;i++){
+
+// for(let j=2;j<i;j++)
+// {
+//     if(i%j==0){
+//         break;
+//     }else{
+//         console.log(i);  
+//         break;
+//     }
+// }
+// }
+
+//33. Generate Fibonacci series up to n terms
+ 
+// for(let num=0;num<=20;num++)
+// {
+// let fibonum=0;
+// function fibo(num){
+//    if (num <= 1) {
+//     return num;
+//   }
+//   return fibonum=fibo(num-1)+fibo(num-2);
+// }
+// let ans = fibo(num);
+// console.log(ans);
+// }
+
+
+//34. Check whether a number belongs to Fibonacci series.
+// let checknum = 6;
+// for(let num=0;num<=20;num++)
+// {
+// let fibonum=0;
+// function fibo(num){
+//    if (num <= 1) {
+//     return num;
+//   }
+//   return fibonum=fibo(num-1)+fibo(num-2);
+// }
+// let ans = fibo(num);
+//  if(ans == checknum)
+//  {
+//     console.log(`${ans} is belongs to fibo series`); 
+//  }else{
+//     console.log(`${ans} is not belongs to fibo series`); 
+//  }
+// }
+
+//35. Print sum of first n natural numbers without loop.
+
+
+
+
+// � COUNTING & CALCULATIONS
+// 39. Count number of even digits in a number
+ 
+// let num = 123456789;
+// let digit=0;
+// let count=0;
+// while(num>0)
+// {
+//     digit=num%10;
+
+//     if(digit%2==0){
+//         count++;
+//     }
+//     num=Math.floor(num/10);
+// }
+// console.log(" even digits in a number count is:"+count);
+
+
+//40. Count number of odd digits in a number
+// let num = 123456789;
+// let digit=0;
+// let count=0;
+// while(num>0)
+// {
+//     digit=num%10;
+
+//     if(digit%2!=0){
+//         count++;
+//     }
+//     num=Math.floor(num/10);
+// }
+// console.log(" Odd digits in a number count is:"+count);
+
+
+
+//41. Count how many zeros are present in a number
+   
+// let num = 1020304050;
+// let digit=0;
+// let count=0;
+// while(num>0){
+// digit = num%10;
+//     if(digit==0)
+//     {
+//         count++;
+//     }
+//     num=Math.floor(num/10);
+// }
+// console.log("Count of Zeroes is :"+count);
+
 
 
 
