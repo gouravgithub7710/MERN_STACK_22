@@ -227,46 +227,144 @@
 // }
 // console.log("Factorial is :"+fact);
 
+//17. Check if a number is a Strong number
+//(145 → 1! + 4! + 5! = 145).
+
+// let num = 145;
+// let temp = num;
+// let sum = 0;
+
+// while (temp > 0) {
+//   let digit = temp % 10;
+
+//   // factorial of digit
+//   let fact = 1;
+//   for (let i = 1; i <= digit; i++) {
+//     fact = fact * i;
+//   }
+
+//   sum = sum + fact;
+//   temp = Math.floor(temp / 10);
+// }
+
+// if(sum == num){
+//     console.log(`${num} number is a Strong number`);
+// }else{
+//      console.log(`${num} number is not a Strong number`);
+// }
+
+
+//18. Sum of factorial of digits of a number.
+// let num = 145;
+// let temp = num;
+// let sum = 0;
+
+// while (temp > 0) {
+//   let digit = temp % 10;
+
+//   // factorial of digit
+//   let fact = 1;
+//   for (let i = 1; i <= digit; i++) {
+//     fact = fact * i;
+//   }
+
+//   sum = sum + fact;
+//   temp = Math.floor(temp / 10);
+// }
+// console.log("Sum of factorial of digits is:", sum);
+
+
+//19. Count how many Strong numbers are present between two limits
+
+// let firstnum = 1;
+// let lastnum = 1000;
+// let count =0;
+// for(let num = firstnum; num <=lastnum; num++)
+// {
+// let temp = num;
+// let sum = 0;
+
+// while (temp > 0) {
+//   let digit = temp % 10;
+
+//   // factorial of digit
+//   let fact = 1;
+//   for (let i = 1; i <= digit; i++) {
+//     fact = fact * i;
+//   }
+
+//   sum = sum + fact;
+//   temp = Math.floor(temp / 10);
+// }
+
+// if(sum == num){
+// console.log(num + " is a Strong Number");
+//     count++;
+// }
+// }
+// console.log("Strong numbers are present between two limits count is:"+count);
 
 
 
 //🔹 PRIME & COMPOSITE
+
+
 //20. Check whether a number is prime
-
 // let num = 57;
-
-// if(num<2){
-//     console.log("Num is Less than 1, Enter Greater than 1 num");
-// }
+// let isprime = true;
 
 // for(let i=2;i<num;i++)
 // {
 //     if(num%i==0){
-//         console.log(`{num} is not a prime num`);   
-//         break;
-//     }else{
-//         console.log(`{num} is a prime num`);  
+//         isprime = false;
 //         break;
 //     }
+// }
+// if (isprime) {
+//   console.log(num + " is a Prime Number");
+// } else {
+//   console.log(num + " is Not a Prime Number");
 // }
 
 
 //21. Print all prime numbers in a given range.
+// let num = 10;
 
-// let num = 30;
+// for (let i = 1; i < num; i++) {
 
-// for(let i=2;i<num;i++){
+//   if (i <= 1) continue; // 1 prime nahi hota
 
-// for(let j=2;j<i;j++)
-// {
-//     if(i%j==0){
-//         break;
-//     }else{
-//         console.log(i);  
-//         break;
+//   let isPrime = true;
+
+//   for (let j = 2; j < i; j++) {
+//     if (i % j == 0) {
+//       isPrime = false;
+//       break;
 //     }
+//   }
+//   if (isPrime) {
+//     console.log(i);  
+//   }
 // }
+
+ 
+ //22. Count digits in a number that are prime digits (2,3,5,7).
+
+// let num = 105273;
+// let count = 0;
+
+// while (num > 0) {
+//   let digit = num % 10;
+
+//   // check prime digit
+//   if (digit == 2 || digit == 3 || digit == 5 || digit == 7) {
+//     count++;
+//   }
+//   num = Math.floor(num / 10);
 // }
+// console.log("Count of prime digits is: " + count);
+
+
 
 //33. Generate Fibonacci series up to n terms
  
@@ -306,7 +404,57 @@
 
 //35. Print sum of first n natural numbers without loop.
 
+// function sumNatural(n) {
+//   if (n == 0) return 0;      
+//   return n + sumNatural(n - 1); 
+// }
+// let n = 10;
+// console.log("Sum of first " + n + " natural numbers is: " + sumNatural(n));
 
+
+// 36. Print sum of first n odd numbers.
+// let n = 10; 
+// let sum = 0;
+
+// let odd = 1;
+
+// for (let i = 1; i <= n; i++) {
+//   console.log("Odd number is: " + odd);
+//   sum += odd;
+//   odd += 2; // next odd number
+// }
+// console.log("Sum of first " + n + " odd numbers is: " + sum);
+
+
+
+// 37. Print sum of first n even numbers.
+
+// let n = 10; 
+// let sum = 0;
+
+// let even = 2;
+
+// for (let i = 1; i <= n; i++) {
+//   console.log("even number is: " + even);
+//   sum += even;
+//   even += 2; // next even number
+// }
+// console.log("Sum of first " + n + " even numbers is: " + sum);
+
+
+
+//38. Print sum of squares of digits of number.
+
+// let num = 123;
+// let sum = 0;
+// let temp = num;
+
+// while (temp > 0) {
+//   let digit = temp % 10;  
+//   sum = sum + (digit * digit); 
+//   temp = Math.floor(temp / 10); 
+// }
+// console.log("Sum of squares of digits of " + num + " is: " + sum);
 
 
 // � COUNTING & CALCULATIONS
