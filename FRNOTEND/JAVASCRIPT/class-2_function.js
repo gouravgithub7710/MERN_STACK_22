@@ -168,3 +168,24 @@ variable and call inside console.log() !!!!!!!!!*/
 // // console.log(output);
 
 // console.log(complexCalculation(10,2));
+
+
+// Anonymous Function :
+
+                           // Anonymous function wo function hota hai jiska koi naam nahi hota. and isko variable me store karte hai.
+
+                           // Anonymous function ko directly call nahi kar sakte, use variable, IIFE ya callback ke through call kiya jata hai.
+
+               // let fun = function () {
+               // console.log("Hello");   
+               // };
+
+                     //calling
+
+                           // let greet = function () {
+                           // console.log("Hello");
+                           // };
+
+                           // greet();   // function call
+
+
