@@ -1,0 +1,39 @@
+BOM -> window -> DOM
+  |     |         
+  |    Object     
+  |
+BOM browser ko control karta hai, window uska main object hota hai, aur DOM window ke andar HTML page ko represent karta hai.
+
+
+
+Event:-  JS me event ek object hota hai jo browser ke dwara diya jata hai 
+          Event ka matlab hota hai koi action ya ghatna jo user ya browser ke dwara hoti hai.
+
+          Jab bhi user kuch karta hai ya browser me kuch hota hai, usse event kehte hain.
+
+
+                  | User Action    | Event       |
+                  | -------------- | ----------- |
+                  | Button click   | `click`     |
+                  | Mouse move     | `mousemove` |
+                  | Page load      | `load`      |
+                  | Input me type  | `input`     |
+                  | Form submit    | `submit`    |
+
+
+Event handler function :- 
+                            essa fn jisko event ko handel karne ke liye function likha jata hai 
+                                  ()=>{}
+
+addEventListner() :-
+                   ye ek method hai jo batata hai kis per event perform karna hai
+
+                  1: get the element from html file and ek variable me store kar lo
+                  2: variableName.addEventListner("eventName",EventHandlerFn)
+
+
+              
+//Append vs AppendChild
+
+Append() :- multiple value ko add karne ke liye ek barr me 
+AppendChild() :- ek single vale ko add karne ke liye 
