@@ -1,0 +1,107 @@
+//Dom
+DOM (Document Object Model) ek tree structure hota hai jo HTML page ko JavaScript ke through access aur manipulate karne deta hai
+
+DOM allows JavaScript to dynamically access and manipulate HTML and CSS of a web page.
+
+Document ek object hai 
+
+########### HTMLCollection and NodeList dono ko index se excess karna hai #########
+
+
+DOM Tree Structure
+
+<html>
+  <head>
+    <title>Page</title>
+  </head>
+  <body>
+    <h1>Hello</h1>
+    <p>Welcome</p>
+  </body>
+
+
+  Browser isko tree ki tarah dekhta hai
+
+          document
+             html
+                head
+                body
+                    h1
+                    p
+
+
++ HTML Element ko Select karna (Most Important)
+🔹 By ID
+document.getElementById("title");
+
+🔹 By Class
+document.getElementsByClassName("box");
+
+🔹 By Tag
+document.getElementsByTagName("p");
+
+🔹 Modern Way (Most Used)
+document.querySelector("#title");     // id
+document.querySelector(".box");       // class
+document.querySelector("p");          // tag
+
+document.querySelectorAll(".box");    // multiple elements
+
+
+
+//Script tag ko html file me upper likhte hai to apan ko {differ} keyword use karan hai -- iske vajhe se pahele HTML load hoge and then Js baaad me work karege 
+
+// Script tag ko html file me niche likhte hai to hame differ keyword ko use karne ke jarurat nhi padte hai 
+
+document.getElementById()  Single HTML Element return karta hai
+
+getElementsByClassName() HTMLCollection return karta ha
+
+getElementsByTagName() HTMLCollection return karta ha
+
+HTMLCollection -- array like Object hote hai , jiske pass kuch array or object dono ke methods hote hai
+and HTMLCollection se element access karana hota hai to [index] iska use karte hai 
+
+
+
+//- querySelector first matching element deta hai
+
+// IMP 
+
+querySelectorALl ---return as Node list karta hai 
+
+Node list element ko access karana hota hai to [index] iska use karte hai 
+
+NodeList ek collection (list) hoti hai jisme multiple DOM nodes hote hain
+jaise → elements, text nodes, comments, etc.
+
+Matlab jab hum DOM se ek se zyada elements select karte hain, to output NodeList hota hai.
+
+
+
+getElementsByTagName ---return HTMLCollection karta hai
+
+
+//Imp Q
+textcontent vs innertext 
+textcontent:-- jaise html ke ander text likha vese hai deta hai -- space hai to vo bhi dega
+innertext :-- Ui ke hisab se output deta hai 
+
+
+//getAtribute: Atribute ko acess karne ke liye 
+
+let div = document.getElementById("box");
+
+console.log(div.getAttribute("id"));     // box
+console.log(div.getAttribute("class"));  // container
+
+
+//setAtribute: Atribute add karne ke liye
+
+let img = document.getElementById("img1");
+img.setAttribute("src", "photo.jpg");
+img.setAttribute("alt", "My Photo");
+
+
+
+
