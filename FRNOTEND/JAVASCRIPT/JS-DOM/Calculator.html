@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Simple Calculator</title>
+
+  <style>
+    *{
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: Arial, sans-serif;
+    }
+
+    body{
+      height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background: #f2f2f2;
+    }
+
+    .calculator{
+      background: #222;
+      padding: 20px;
+      border-radius: 10px;
+      width: 260px;
+    }
+
+    .display{
+      width: 100%;
+      height: 50px;
+      font-size: 22px;
+      text-align: right;
+      padding: 10px;
+      margin-bottom: 15px;
+      border: none;
+      border-radius: 5px;
+    }
+
+    .buttons{
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 10px;
+    }
+
+    button{
+      padding: 15px;
+      font-size: 18px;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+
+    button:hover{
+      background: #ddd;
+    }
+
+    .zero{
+      grid-column: span 2;
+    }
+  </style>
+
+</head>
+<body>
+
+  <div class="calculator">
+    <input type="text" class="display" placeholder="0" disabled>
+
+    <div class="buttons">
+      <button>C</button>
+      <button>/</button>
+      <button>*</button>
+      <button>-</button>
+
+      <button>7</button>
+      <button>8</button>
+      <button>9</button>
+      <button>+</button>
+
+      <button>4</button>
+      <button>5</button>
+      <button>6</button>
+      <button>=</button>
+
+      <button>1</button>
+      <button>2</button>
+      <button>3</button>
+      <button class="zero">0</button>
+    </div>
+  </div>
+<style src="Calculator.js"></style>
+</body>
+</html>
