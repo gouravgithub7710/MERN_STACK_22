@@ -1176,3 +1176,530 @@ console.log(leak); // Accessible
 // ✅ No leak - proper declaration
 function noLeak() {
     let local = "Local variable";
+    console.log(local);
+}
+noLeak();
+
+// ❌ Memory leak - event listeners
+const button = document.getElementById("myBtn");
+function handler() {
+    console.log("Clicked");
+}
+button.addEventListener("click", handler);
+
+// ✅ Remove when not needed
+button.removeEventListener("click", handler);
+
+// ❌ Memory leak - timers
+let counter = 0;
+const id = setInterval(() => {
+    counter++;
+    console.log(counter);
+}, 1000);
+
+// ✅ Clear interval
+setTimeout(() => {
+    clearInterval(id);
+    console.log("Cleared");
+}, 5000);
+```
+
+**Output:**
+```
+Global variable
+Local variable
+1
+2
+3
+4
+5
+Cleared
+```
+
+---
+
+## 25. Deep copy aur shallow copy
+
+**Question:** JavaScript me deep copy aur shallow copy me kya difference hai?
+
+**Answer:** Shallow copy me sirf top-level properties copy hoti hain, jabki deep copy me nested objects bhi completely copy hote hain.
+
+**Example:**
+```javascript
+// Shallow copy
+const original = {
+    name: "Raj",
+    address: {
+        city: "Delhi",
+        pin: 110001
+    }
+};
+
+// Using spread operator (shallow)
+const shallow = { ...original };
+shallow.address.city = "Mumbai";
+console.log("Original:", original.address.city); // Mumbai ❌
+console.log("Shallow:", shallow.address.city);   // Mumbai
+
+// Using Object.assign (shallow)
+const shallow2 = Object.assign({}, original);
+
+// Deep copy using JSON
+const original2 = {
+    name: "Priya",
+    address: {
+        city: "Bangalore",
+        pin: 560001
+    }
+};
+
+const deep = JSON.parse(JSON.stringify(original2));
+deep.address.city = "Chennai";
+console.log("Original:", original2.address.city); // Bangalore ✅
+console.log("Deep:", deep.address.city);          // Chennai
+
+// Deep copy using structuredClone (modern)
+const deepCopy = structuredClone(original2);
+deepCopy.address.pin = 600001;
+console.log("Original pin:", original2.address.pin); // 560001 ✅
+```
+
+**Output:**
+```
+Original: Mumbai
+Shallow: Mumbai
+Original: Bangalore
+Deep: Chennai
+Original pin: 560001
+```
+
+---
+
+## 26. localStorage aur sessionStorage
+
+**Question:** JavaScript me localStorage aur sessionStorage me kya difference hai?
+
+**Answer:** localStorage me data browser close karne ke baad bhi persist rehta hai, jabki sessionStorage sirf tab/window session tak rehta hai.
+
+**Example:**
+```javascript
+// localStorage - data persists
+localStorage.setItem("username", "Rahul");
+localStorage.setItem("userId", "12345");
+
+console.log("Username:", localStorage.getItem("username"));
+
+// Store object
+const user = { name: "Amit", age: 25 };
+localStorage.setItem("user", JSON.stringify(user));
+
+// Retrieve object
+const retrieved = JSON.parse(localStorage.getItem("user"));
+console.log("User:", retrieved);
+
+// sessionStorage - cleared after session
+sessionStorage.setItem("tempData", "Temporary");
+console.log("Temp:", sessionStorage.getItem("tempData"));
+
+// Remove item
+localStorage.removeItem("username");
+
+// Clear all
+// localStorage.clear();
+// sessionStorage.clear();
+
+// Check if exists
+if (localStorage.getItem("user")) {
+    console.log("User exists");
+}
+
+console.log("Items:", localStorage.length);
+```
+
+**Output:**
+```
+Username: Rahul
+User: { name: 'Amit', age: 25 }
+Temp: Temporary
+User exists
+Items: 2
+```
+
+**Differences:**
+| Feature | localStorage | sessionStorage |
+|---------|-------------|----------------|
+| Lifetime | Permanent | Session only |
+| Scope | Same origin | Same tab |
+| Storage | ~5-10MB | ~5-10MB |
+
+---
+
+## 27. Difference between == and ===
+
+**Question:** What is the difference between == and === in JavaScript?
+
+**Answer:** `==` loose equality hai (type coercion hota hai), jabki `===` strict equality hai (type aur value dono check hoti hai).
+
+**Example:**
+```javascript
+// == (loose equality - type coercion)
+console.log(5 == "5");        // true ✅
+console.log(0 == false);      // true ✅
+console.log(null == undefined); // true ✅
+console.log("" == 0);         // true ✅
+
+// === (strict equality - no coercion)
+console.log(5 === "5");       // false ❌
+console.log(0 === false);     // false ❌
+console.log(null === undefined); // false ❌
+console.log("" === 0);        // false ❌
+
+// Practical example
+const num = 10;
+const str = "10";
+
+if (num == str) {
+    console.log("== says equal");
+}
+
+if (num === str) {
+    console.log("=== says equal");
+} else {
+    console.log("=== says not equal");
+}
+
+// Best practice: Always use ===
+const value = 0;
+if (value === 0) { // ✅ Good
+    console.log("Value is zero");
+}
+```
+
+**Output:**
+```
+true
+true
+true
+true
+false
+false
+false
+false
+== says equal
+=== says not equal
+Value is zero
+```
+
+---
+
+## 28. Closures ka real-world example
+
+**Question:** JavaScript me closures ka real-world example dikhaiye.
+
+**Answer:** Closures ka use private variables aur data encapsulation ke liye hota hai.
+
+**Example:**
+```javascript
+// Counter with private variable
+function createCounter() {
+    let count = 0; // Private
+    
+    return {
+        increment: function() {
+            count++;
+            console.log("Count:", count);
+        },
+        decrement: function() {
+            count--;
+            console.log("Count:", count);
+        },
+        getCount: function() {
+            return count;
+        }
+    };
+}
+
+const counter = createCounter();
+counter.increment(); // 1
+counter.increment(); // 2
+counter.decrement(); // 1
+console.log("Current:", counter.getCount()); // 1
+// console.log(counter.count); // undefined ✅
+
+// Bank account example
+function createBankAccount(initialBalance) {
+    let balance = initialBalance;
+    
+    return {
+        deposit(amount) {
+            balance += amount;
+            console.log(`Deposited: ₹${amount}, Balance: ₹${balance}`);
+        },
+        withdraw(amount) {
+            if (balance >= amount) {
+                balance -= amount;
+                console.log(`Withdrawn: ₹${amount}, Balance: ₹${balance}`);
+            } else {
+                console.log("Insufficient funds!");
+            }
+        },
+        checkBalance() {
+            console.log(`Balance: ₹${balance}`);
+        }
+    };
+}
+
+const account = createBankAccount(1000);
+account.deposit(500);
+account.withdraw(300);
+account.checkBalance();
+```
+
+**Output:**
+```
+Count: 1
+Count: 2
+Count: 1
+Current: 1
+Deposited: ₹500, Balance: ₹1500
+Withdrawn: ₹300, Balance: ₹1200
+Balance: ₹1200
+```
+
+---
+
+## 29. Recursion
+
+**Question:** JavaScript me recursion ka use kab aur kaise karte hain?
+
+**Answer:** Recursion tab use hota hai jab problem ko smaller sub-problems me tod sakte hain.
+
+**Example:**
+```javascript
+// Factorial
+function factorial(n) {
+    if (n === 0 || n === 1) {
+        return 1;
+    }
+    return n * factorial(n - 1);
+}
+
+console.log("5! =", factorial(5)); // 120
+console.log("3! =", factorial(3)); // 6
+
+// Fibonacci
+function fibonacci(n) {
+    if (n <= 1) {
+        return n;
+    }
+    return fibonacci(n - 1) + fibonacci(n - 2);
+}
+
+console.log("Fib(6) =", fibonacci(6)); // 8
+console.log("Fib(10) =", fibonacci(10)); // 55
+
+// Sum of array
+function sumArray(arr) {
+    if (arr.length === 0) {
+        return 0;
+    }
+    return arr[0] + sumArray(arr.slice(1));
+}
+
+console.log("Sum:", sumArray([1, 2, 3, 4, 5])); // 15
+
+// Countdown
+function countdown(n) {
+    if (n <= 0) {
+        console.log("Blastoff! 🚀");
+        return;
+    }
+    console.log(n);
+    countdown(n - 1);
+}
+
+countdown(5);
+
+// Power calculation
+function power(base, exp) {
+    if (exp === 0) return 1;
+    return base * power(base, exp - 1);
+}
+
+console.log("2^3 =", power(2, 3)); // 8
+```
+
+**Output:**
+```
+5! = 120
+3! = 6
+Fib(6) = 8
+Fib(10) = 55
+Sum: 15
+5
+4
+3
+2
+1
+Blastoff! 🚀
+2^3 = 8
+```
+
+---
+
+## 30. call, apply aur bind
+
+**Question:** JavaScript me call, apply aur bind ka difference kya hai?
+
+**Answer:** `call()` aur `apply()` function ko immediately execute karte hain, jabki `bind()` ek naya function return karta hai.
+
+**Example:**
+```javascript
+const person = {
+    firstName: "Raj",
+    lastName: "Kumar"
+};
+
+function greet(city, country) {
+    console.log(`Hello, I am ${this.firstName} ${this.lastName} from ${city}, ${country}`);
+}
+
+// call() - arguments individually
+greet.call(person, "Delhi", "India");
+
+// apply() - arguments as array
+greet.apply(person, ["Mumbai", "India"]);
+
+// bind() - returns new function
+const greetPerson = greet.bind(person);
+greetPerson("Bangalore", "India");
+
+// With single argument
+const greetDelhi = greet.bind(person, "Delhi");
+greetDelhi("India");
+
+// Practical example
+const calculator = {
+    value: 0,
+    add: function(num) {
+        this.value += num;
+        console.log("Value:", this.value);
+    }
+};
+
+const obj = { value: 100 };
+
+calculator.add.call(obj, 50);  // 150
+calculator.add.apply(obj, [25]); // 175
+
+const addToObj = calculator.add.bind(obj);
+addToObj(10); // 185
+
+// Function borrowing
+const person1 = {
+    name: "Amit",
+    greet: function() {
+        console.log("Hello from", this.name);
+    }
+};
+
+const person2 = { name: "Priya" };
+person1.greet.call(person2); // Hello from Priya
+
+// Method chaining with bind
+const module = {
+    x: 42,
+    getX: function() {
+        return this.x;
+    }
+};
+
+const unboundGetX = module.getX;
+console.log(unboundGetX()); // undefined
+
+const boundGetX = unboundGetX.bind(module);
+console.log(boundGetX()); // 42
+```
+
+**Output:**
+```
+Hello, I am Raj Kumar from Delhi, India
+Hello, I am Raj Kumar from Mumbai, India
+Hello, I am Raj Kumar from Bangalore, India
+Hello, I am Raj Kumar from Delhi, India
+Value: 150
+Value: 175
+Value: 185
+Hello from Priya
+undefined
+42
+```
+
+**Differences:**
+| Method | Execution | Arguments | Use Case |
+|--------|-----------|-----------|----------|
+| call() | Immediate | Individual| Quick execution |
+| apply() | Immediate| Array     | Array of args |
+| bind() | Returns fn| Individual| Later execution |
+
+---
+
+## 🎯 Summary
+
+Is document me humne JavaScript ke 30 important interview questions cover kiye hain:
+
+### Core Concepts
+- ✅ JavaScript basics aur data types
+- ✅ Variables (var, let, const)
+- ✅ Functions aur arrow functions
+- ✅ Hoisting aur closures
+
+### Advanced Topics
+- ✅ Higher-order functions
+- ✅ Promises aur async/await
+- ✅ Array methods (map, filter, reduce)
+- ✅ ES6+ features
+
+### DOM & Browser APIs
+- ✅ DOM manipulation
+- ✅ Event delegation
+- ✅ localStorage & sessionStorage
+
+### Best Practices
+- ✅ Error handling
+- ✅ Memory management
+- ✅ Deep vs shallow copy
+- ✅ Code organization with modules
+
+---
+
+## 📚 Additional Resources
+
+- [MDN Web Docs](https://developer.mozilla.org/en-US/docs/Web/JavaScript)
+- [JavaScript.info](https://javascript.info/)
+- [Eloquent JavaScript](https://eloquentjavascript.net/)
+- [You Don't Know JS](https://github.com/getify/You-Dont-Know-JS)
+
+---
+
+## 🤝 Contributing
+
+Agar aapko koi error mile ya koi suggestion ho, to feel free to contribute!
+
+---
+
+## 📝 License
+
+This document is free to use for educational purposes.
+
+---
+
+## 👨‍💻 Author
+
+Created with ❤️ for JavaScript learners
+
+---
+
+**Happy Learning! 🚀**
+
+*Star ⭐ this repo if you found it helpful!*
