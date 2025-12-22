@@ -34,3 +34,7 @@
 
                     // student.study(); // I can study
                     // student.speak(); // I can speak (from prototype)
+
+
+
+              
