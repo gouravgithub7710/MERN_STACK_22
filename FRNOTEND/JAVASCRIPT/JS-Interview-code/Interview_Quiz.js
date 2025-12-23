@@ -1,5 +1,16 @@
 // Interview Quiz Q
 
+
+// premitive me value compare hote hai 
+// let a=5;
+// let b=5; 
+// { a==b } is true bcoz value is same
+
+// Non-premitive me address compare hote hai like in ARRAY
+// Let arr1=[1,2,3,4,5];
+// Let arr2=[1,2,3,4,5];
+// {arr1==arr2} is false bcoz address is diff
+
 // console.log(typeof NaN);   //number
 
 
