@@ -70,23 +70,66 @@ One-line yaad rakhne ke liye:
                   Project me dependencies add karta hai               
 
 ## state :
-        kise componenet ka current data
+        kise componenet ka current data (ui me esa data jo kaise variable ke through aa raha hai usse state bolte hai)
 
 # stateLess: {By Default}
-          kise componeent ke data ko change karte hai and vo ui per nhi dekhta hai ussse stateless bolte ahi 
+          kise componeent ke data ko change karte hai and vo ui per nhi dekhta hai ussse stateless bolte hai
+            kyu ke hum js ke variable use karte hai to stateless hote hai. 
 
 # stateActive :
            kise componeent ke data ko change karte hai and vo ui per change ho kar dekhta hai ussse stateActive bolte ahi 
 
 ## Hooks : 
           Pre-Defined funcion hota hai, which is used make stateless to stateactive
+          hooks : asynchronous behave karte hai       
+          Hooks fn ke ander likhe jate hai.
+
+         ai 
+
+
 
 # useState : 
             ye ek hook hai, isko install karna padta hai 
             ek time per ek state change karna hai to useState ka use karte hai  
 
+  ########## const se bane varible bhi change ho jate hai kyu ke using this we can cange the property of the variable
+
 # useEffect :
              Api fetch karne ke liye kaam aata hai
+             
+                  useEffect(() => {
+                  // side effect code here
+                  }, [dependencies]);
+
+                  
+             
+            // 1st variety-> without dependency array
+            //agar me useEffect hook ka use without dependency array ke karta hu to mera callback function jo use Effect ke andar likha us compoent ke 
+            //har ek render me excute hoga.
+            // useEffect(() => {
+            //   console.log("hey I am Jagmohan ")
+            // }) // kaise bhi state ko change karne per useeffect work karta hai ouput deta hai.
+
+
+            // 2nd variety-> with dependency array which value is empty 
+            // useEffect(() => {
+            //   console.log("hey I am Jagmohan ")
+            // },[])// ek hai chalta hai. state change per bhi nhi chalta hai.
+
+
+            //3rd variety-> dependecny array has some values(states, variable);
+
+            // useEffect(() => {
+            //   console.log("hey I am Jagmohan ")
+            // }, [data])  // only datat wali state change hone per hai chalega.
+
+
+            // 4- cleaner component 
+            useEffect(() => {
+            // console.log("hey I am Jagmohan ")
+            return (console.log("hey i will run when component is delete "))
+            }, [data])  // ek baar chalta hai and component delete hone per bhi chalta hai 
+
 
 ## Routing  :
             kind of process which allow to move one page to another page
@@ -103,8 +146,25 @@ One-line yaad rakhne ke liye:
             
 
 
+# Fragmanet : 
+                  <> </>
+
+
+# React event :
+                  event is a action which is done by user like : click, hover, scroll, load, resize.                 
+                  react ke ander event on se start hote hai [ onClick, onChange]
+
+
+# Props : &  Props drelling :
+          Props-> ek object hai and iske kuch Properties 
+          Parent se child
+
+            one comppents 
+
+          top to bottom aate hai 
 
 
 
 
 
+ 
