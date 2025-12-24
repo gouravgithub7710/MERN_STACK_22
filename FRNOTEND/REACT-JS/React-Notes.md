@@ -131,20 +131,9 @@ One-line yaad rakhne ke liye:
             }, [data])  // ek baar chalta hai and component delete hone per bhi chalta hai 
 
 
-## Routing  :
-            kind of process which allow to move one page to another page
-
-            1: install npm i react-router-dom
-            2:   <BrowserRouter>
-                  <App>
-                  <BrowserRouter>
-            3: come to App.js define the routes.
-                  <Rotes> 
-                  Routes path="/"  
-                  element={}
-                  </Routes>
-            
-
+# useParams() :
+                        useParams() dynamic routing implement karne ke liye hota hai.
+                  ye ek obj return karta hai isme url hote hai.
 
 # Fragmanet : 
                   <> </>
@@ -158,13 +147,56 @@ One-line yaad rakhne ke liye:
 # Props : &  Props drelling :
           Props-> ek object hai and iske kuch Properties 
           Parent se child
-
             one comppents 
-
           top to bottom aate hai 
 
+            Props Drilling :
+                              Data pass karna multiple components ke through
+
+            Props Lifting :
+                              Child se parent me data bhejna
 
 
 
+# Routing  :
+            kind of process which allow to move one page to another page
+
+            React router dom is a library we need to install for doing rounting
+            1: install npm i react-router-dom
+            2:   <BrowserRouter>
+                  <App>
+                  <BrowserRouter>
+            3: come to App.js define the routes.
+                  <Rotes> 
+                  Routes path="/"  
+                  element={yaha component mount hote hai}
+                  </Routes>
+
+
+## Dynamic routing:
+                        👉 URL ke andar dynamic value (parameter) pass karna
+                        aur us value ke base par different data / component render karna.
+
+
+      using useParams() we implement dynamic routing 
+
+Syntex:
+            <Route path="/user/:id" element={<User />} />
+                               |
+                        : colon ke badd dynamic rounting ka parameter likha hai.
+
+
+                        Dynamic routing allows passing parameters in the URL to render different content using a single component.
+
+                        📌 Points to Remember
+                        : use hota hai dynamic param ke liye
+                        useParams() se value milti hai
+                        Mostly detail pages ke liye use hota hai
 
  
+
+## use Nevigate()
+                  : ek page se dusre page me jane ke liye 
+                  Next page per jana
+
+                  navigate(-1) karne se previous page per chale jate hai
