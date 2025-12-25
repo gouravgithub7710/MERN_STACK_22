@@ -92,7 +92,16 @@ One-line yaad rakhne ke liye:
             ye ek hook hai, isko install karna padta hai 
             ek time per ek state change karna hai to useState ka use karte hai  
 
-  ########## const se bane varible bhi change ho jate hai kyu ke using this we can cange the property of the variable
+            setData isme ek fn hota hai and isme ye asynchronous hota hai and ye webapi me jata hai.
+
+  ########## 
+      Const se bane variable ka reference change nahi hota,
+      lekin agar wo object ya array ho to uski properties change ki ja sakti hain.
+
+      Agar thoda aur simple chahiye:
+
+      Const object ke andar ki value change ho sakti hai,
+      lekin pura object replace nahi kar sakte.
 
 # useEffect :
              Api fetch karne ke liye kaam aata hai
@@ -144,17 +153,18 @@ One-line yaad rakhne ke liye:
                   react ke ander event on se start hote hai [ onClick, onChange]
 
 
-# Props : &  Props drelling :
-          Props-> ek object hai and iske kuch Properties 
-          Parent se child
-            one comppents 
-          top to bottom aate hai 
+# Props : &  Props drelling & lifitng:
+
+            ye immeutable hota hai. means read only 
 
             Props Drilling :
-                              Data pass karna multiple components ke through
+                              Data pass karna multiple components ke through [parent to child]
 
             Props Lifting :
-                              Child se parent me data bhejna
+                              Child se parent me data bhejna [child to parent]
+                              1: isme ek state and ek fn banana hota hai.
+                                 state me data store karte hai us fn ka......
+                              
 
 
 
