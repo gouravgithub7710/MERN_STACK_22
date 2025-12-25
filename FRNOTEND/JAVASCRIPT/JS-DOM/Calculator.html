@@ -4,91 +4,83 @@
   <meta charset="UTF-8">
   <title>Simple Calculator</title>
 
-  <style>
-    *{
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-      font-family: Arial, sans-serif;
-    }
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet">
 
-    body{
-      height: 100vh;
+  <style>
+    .calculator-container{
       display: flex;
       justify-content: center;
-      align-items: center;
-      background: #f2f2f2;
     }
-
     .calculator{
-      background: #222;
-      padding: 20px;
-      border-radius: 10px;
-      width: 260px;
+      height: 300px;
+      width: 200px;
     }
-
-    .display{
-      width: 100%;
-      height: 50px;
-      font-size: 22px;
-      text-align: right;
-      padding: 10px;
-      margin-bottom: 15px;
-      border: none;
-      border-radius: 5px;
+    h1{
+      display: flex;
+      justify-content: center;
+      margin-top: 100px;
+      padding-bottom: 20px;
     }
-
-    .buttons{
-      display: grid;
-      grid-template-columns: repeat(4, 1fr);
-      gap: 10px;
-    }
-
-    button{
-      padding: 15px;
-      font-size: 18px;
-      border: none;
-      border-radius: 5px;
+    .cal-buttons{
+      border-radius: 20px;
+      text-align: center;
       cursor: pointer;
+      padding: 5px;
     }
-
-    button:hover{
-      background: #ddd;
-    }
-
-    .zero{
-      grid-column: span 2;
+    .cal-buttons:hover{
+      background-color: tomato;
+      color: white;
     }
   </style>
-
 </head>
+
 <body>
 
+<h1>Calculator</h1>
+
+<div class="calculator-container">
   <div class="calculator">
-    <input type="text" class="display" placeholder="0" disabled>
+
+    
+    <input type="text" id="display" class="form-control mb-2" readonly>
 
     <div class="buttons">
-      <button>C</button>
-      <button>/</button>
-      <button>*</button>
-      <button>-</button>
+      <div class="row">
+        <div class="col cal-buttons" onclick="handleClickButton(this)">+</div>
+        <div class="col cal-buttons" onclick="handleClickButton(this)">-</div>
+        <div class="col cal-buttons" onclick="handleClickButton(this)">*</div>
+        <div class="col cal-buttons" onclick="handleClickButton(this)">/</div>
+      </div>
 
-      <button>7</button>
-      <button>8</button>
-      <button>9</button>
-      <button>+</button>
+      <div class="row">
+        <div class="col col-3 cal-buttons" onclick="handleClickButton(this)">7</div>
+        <div class="col col-3 cal-buttons" onclick="handleClickButton(this)">8</div>
+        <div class="col col-3 cal-buttons" onclick="handleClickButton(this)">9</div>
+      </div>
 
-      <button>4</button>
-      <button>5</button>
-      <button>6</button>
-      <button>=</button>
+      <div class="row">
+        <div class="col col-3 cal-buttons" onclick="handleClickButton(this)">4</div>
+        <div class="col col-3 cal-buttons" onclick="handleClickButton(this)">5</div>
+        <div class="col col-3 cal-buttons" onclick="handleClickButton(this)">6</div>
+      </div>
 
-      <button>1</button>
-      <button>2</button>
-      <button>3</button>
-      <button class="zero">0</button>
+      <div class="row">
+        <div class="col col-3 cal-buttons" onclick="handleClickButton(this)">1</div>
+        <div class="col col-3 cal-buttons" onclick="handleClickButton(this)">2</div>
+        <div class="col col-3 cal-buttons" onclick="handleClickButton(this)">3</div>
+      </div>
+
+      <div class="row">
+        <div class="col col-3 cal-buttons" onclick="handleClickButton(this)">0</div>
+        <div class="col col-5 cal-buttons" onclick="clearDisplay()">Clear</div>
+        <div class="col col-4 cal-buttons" onclick="calculate()">=</div>
+      </div>
     </div>
   </div>
-<style src="Calculator.js"></style>
+</div>
+
+
+<script src="Calculator.js"></script>
 </body>
 </html>
+
