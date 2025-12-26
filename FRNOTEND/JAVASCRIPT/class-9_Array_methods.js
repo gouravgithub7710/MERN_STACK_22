@@ -95,15 +95,18 @@
 // Parameters:
 
 // accumulator (acc):
-// Previous return value ko store karta hai. Yah “carry forward” hota rehta hai.
+// Previous return value ko store karta hai. like : sum ka output ab acc me store hai.
 
 // currentValue:
 // Array ka current element.
 
-// initialValue (optional):
+//index : optional hai means kis index se start karna hai
+
+//array : optional hai means pura array bhi pass kar saket ho
+
+// initialValue (optional):sum karna ho to zero set kar satke hai initialvalue
 // Accumulator ka starting value.
 // Agar nahi doge → first element ko accumulator bana dega.
-
 
 
 // Example------------
