@@ -45,26 +45,27 @@
 
 
 # Folder Structure 
-
-my-app/
-│
-├── node_modules/        👉 Installed packages (auto)
+my-react-app/
 │
 ├── public/
-│   ├── index.html       👉 Single HTML file
-│   ├── favicon.ico
-│   └── manifest.json
+│   ├── index.html        ✅ (ONLY HTML FILE)
+│   └── favicon.ico
 │
 ├── src/
-│   ├── App.js           👉 Main App component
-│   ├── App.css              
-│   ├── index.js         👉 Entry point (React DOM render)
+│   ├── components/       (Reusable UI components)
+│   │   ├── Header.js
+│   │   └── Footer.js
+│   │
+│   ├── pages/            (Route based pages)
+│   │   ├── Home.js
+│   │   └── Login.js
+│   │
+│   ├── App.js            ✅ (ROOT COMPONENT)
+│   ├── index.js          ✅ (ENTRY FILE)
+│   ├── App.css
 │   ├── index.css
-│   ├── reportWebVitals.js
-│   └── setupTests.js
 │
-├── .gitignore
-├── package.json         👉 Dependencies + scripts
-├── package-lock.json
-└── README.md
+├── package.json
+└── package-lock.json
+
 
