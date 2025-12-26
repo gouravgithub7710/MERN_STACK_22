@@ -1,6 +1,13 @@
 # REACT
 -- It is a javascrpt library
 
+# How React works:
+                  index.html → main.jsx / index.js → App.jsx → Components → UI
+                       |                |                |
+                     SINGLE           ENTRY             ROOT      
+                   HTML FILE          FILE            COMPONENT
+
+                  
 # React is a library of JavaScript
 
 FramWork vs Library
@@ -50,11 +57,12 @@ One-line yaad rakhne ke liye:
 -Hooks :- 
               Predefined fun and ye state or side effect ko manage karne ke liye hote hai 
 
-- SPA 
+# Fragmanet : 
+             <> </>
 
-## NPM vs NPX
+# NPM vs NPX
 
-# npx kya hota hai?
+## npx kya hota hai?
 
         npx = Node Package Executor
 
@@ -62,24 +70,24 @@ One-line yaad rakhne ke liye:
               Install karna zaroori nahi hota
               Temporary use ke liye best
 
-# npm kya hota hai?
+## npm kya hota hai?
 
             npm = Node Package Manager 
 
                   Packages install karne ke kaam aata hai
                   Project me dependencies add karta hai               
 
-## state :
+# state :
         kise componenet ka current data (ui me esa data jo kaise variable ke through aa raha hai usse state bolte hai)
 
-# stateLess: {By Default}
+## stateLess: {By Default}
           kise componeent ke data ko change karte hai and vo ui per nhi dekhta hai ussse stateless bolte hai
             kyu ke hum js ke variable use karte hai to stateless hote hai. 
 
-# stateActive :
+## stateActive :
            kise componeent ke data ko change karte hai and vo ui per change ho kar dekhta hai ussse stateActive bolte ahi 
 
-## Hooks : 
+# Hooks : 
           Pre-Defined funcion hota hai, which is used make stateless to stateactive
           hooks : asynchronous behave karte hai       
           Hooks fn ke ander likhe jate hai.
@@ -88,7 +96,7 @@ One-line yaad rakhne ke liye:
 
 
 
-# useState : 
+## useState : 
             ye ek hook hai, isko install karna padta hai 
             ek time per ek state change karna hai to useState ka use karte hai  
 
@@ -103,7 +111,7 @@ One-line yaad rakhne ke liye:
       Const object ke andar ki value change ho sakti hai,
       lekin pura object replace nahi kar sakte.
 
-# useEffect :
+## useEffect :
              Api fetch karne ke liye kaam aata hai
              
                   useEffect(() => {
@@ -140,12 +148,66 @@ One-line yaad rakhne ke liye:
             }, [data])  // ek baar chalta hai and component delete hone per bhi chalta hai 
 
 
-# useParams() :
+## useParams() :
                         useParams() dynamic routing implement karne ke liye hota hai.
                   ye ek obj return karta hai isme url hote hai.
 
-# Fragmanet : 
-                  <> </>
+## useContext() :
+                  React me Context API ka use hota hai data ko bina props drilling ke multiple components tak bhejne ke liye.
+
+                 ye props driling or lifting ke problem solve karta hai.
+
+                  suitable for small project
+
+           - Context API ke 3 main parts
+
+                  1: createContext() → context banana
+                        Step 1: Context banao    [UserContext.js]
+
+                                    import { createContext } from "react";
+                                    const UserContext = createContext();
+                                    export default UserContext;
+
+
+
+                  2: Provider → data supply karna
+                        Step 2: Provider se data bhejo  [App.js]
+
+                                          import UserContext from "./UserContext";
+                                          import Home from "./Home";
+
+                                          function App() {
+                                          const user = "Gourav";
+
+                                          return (
+                                          <UserContext.Provider value={user}>
+                                                <Home />
+                                          </UserContext.Provider>
+                                          );
+                                          }
+
+                                          export default App;
+                  
+
+                  3: useContext() → data use karna
+                        Step 3: useContext se data lo   [Home.js]
+
+                                          import { useContext } from "react";
+                                          import UserContext from "./UserContext";
+
+                                          function Home() {
+                                          const user = useContext(UserContext);
+
+                                          return <h1>Hello {user}</h1>;
+                                          }
+
+                                          export default Home;
+
+                  ++IMP++
+
+                 1: Index.js me file ka context nhi bannana hai, jab State ho index.js file me.
+
+                 
 
 
 # React event :
@@ -188,7 +250,7 @@ One-line yaad rakhne ke liye:
                         aur us value ke base par different data / component render karna.
 
 
-      using useParams() we implement dynamic routing 
+##      using useParams() we implement dynamic routing 
 
 Syntex:
             <Route path="/user/:id" element={<User />} />
@@ -209,4 +271,12 @@ Syntex:
                   : ek page se dusre page me jane ke liye 
                   Next page per jana
 
-                  navigate(-1) karne se previous page per chale jate hai
+                  navigate(-1) karne se previous page per chale jate ha
+
+
+# Strict Mode - in Index.js
+
+                              : ye strict mode console me output ko ek bar or print kar ke check karta hai.
+
+
+                             
