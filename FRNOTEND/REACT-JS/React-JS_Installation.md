@@ -69,3 +69,12 @@ my-react-app/
 └── package-lock.json
 
 
+src/: This directory contains the main source code of your React app.
+
+src/index.js: The entry point of your application.
+
+src/App.js: The main component of your application.
+
+src/index.css: The main CSS file for your application.
+
+public/: This directory contains the public assets of your app.
