@@ -207,7 +207,9 @@ One-line yaad rakhne ke liye:
 
                  1: Index.js me file ka context nhi bannana hai, jab State ho index.js file me.
 
-                 
+## useRef :
+            useRef ek React hook hai jo value ya DOM element ko store karta hai without re-render.  
+            - useRef component ko  uncontroled component  bana dete hai              
 
 
 # React event :
@@ -244,6 +246,13 @@ One-line yaad rakhne ke liye:
                   element={yaha component mount hote hai}
                   </Routes>
 
+                              React Router is a standard library for routing in React applications. It enables navigation between different components and views:
+
+                              <BrowserRouter>: Wrap your application with this component to enable routing.
+
+                              <Route>: Define a route for a specific path that renders a component.
+
+                              <Link>: Render a navigation link that allows users to navigate without refreshing the page.
 
 ## Dynamic routing:
                         👉 URL ke andar dynamic value (parameter) pass karna
@@ -279,4 +288,45 @@ Syntex:
                               : ye strict mode console me output ko ek bar or print kar ke check karta hai.
 
 
-                             
+# Lifecycle Methods
+
+            Lifecycle methods are hooks that allow you to run code at specific points during a component’s life in the DOM:
+
+                        1]componentDidMount: Invoked immediately after a component is added to the DOM. Ideal for initial API calls.
+                        2]componentDidUpdate: Invoked immediately after updating occurs. Use this for operations that depend on the DOM or props changes.
+                        3]componentWillUnmount: Invoked immediately before a component is removed from the DOM. Useful for cleanup operations.                             
+
+# Synthetic Events :
+                        ye [onClick, onChange, onSubmit, manymore..} events hote hai unko hai Synthetic events bolte hai.
+
+
+# Pure Component :
+
+    1] Pure Component React ka special class component hota hai jo unnecessary re-rendering ko rokta hai. and ye performance optmisation ke kaam aati hai.  Sirf tab render hoti hain jab props ya state actually change ho
+
+      2] Function components me performance optimization ke liye React.memo() use hota hai.
+
+
+# React.memo() :
+
+                        React.memo() ek Higher Order Component (HOC) hai jo function components ko unnecessary re-render hone se bachata hai.
+
+            ### suno jab parent function me state ya prop update ho rhi hai and parent ke ander child bhi hai to us case me parent ke state ya prop change ya update hua hai to parent re-render hoga to uske sath sath bina matlab ke child bhi re-render hoga 
+            so isse bachne ke liye hum 
+            
+            React.memo() use karege means Child component ko React.memo() ke ander wrap kar dene 
+
+            jisse child bena mtb ke rerender nhi hoga yahi perfromance optimise hai. 
+
+# HOC (Higher Order Component) in React :
+
+                  HOC (Higher Order Component) ek function hota hai jo component ko input me leta hai aur ek naya enhanced component return karta hai.
+
+# Components :
+
+            -In React, a component represents a part of the user interface, they are the building blocks of any React application.
+
+            -Components are reusable
+
+                  1-Stateless Functional Components
+                  2-Stateful Class Components
