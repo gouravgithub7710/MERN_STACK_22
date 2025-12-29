@@ -330,3 +330,52 @@ Syntex:
 
                   1-Stateless Functional Components
                   2-Stateful Class Components
+
+
+# Pagination :
+
+                                                Start
+                                                |
+                                                v
+                                          Data Available
+                                                |
+                                                v
+                                          Set cards per page
+                                          (cardInUI = 4)
+                                                |
+                                                v
+                                          Find total length
+                                          (Data.length)
+                                                |
+                                                v
+                                          Calculate total pages
+                                          (ceil(length / cardInUI))
+                                                |
+                                                v
+                                          Create page buttons
+                                          [1, 2, 3, ...]
+                                                |
+                                                v
+                                          Set current page
+                                          (useState)
+                                                |
+                                                v
+                                          Calculate SI & EI
+                                          SI = (currentPage-1)*4
+                                          EI = currentPage*4
+                                                |
+                                                v
+                                          Slice data
+                                          Data.slice(SI, EI)
+                                                |
+                                                v
+                                          Render cards on UI
+                                                |
+                                                v
+                                          Click Page Button
+                                                |
+                                                └───> Update current page
+                                                      (Repeat Flow)
+
+
+                        
