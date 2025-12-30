@@ -209,7 +209,11 @@ One-line yaad rakhne ke liye:
 
 ## useRef :
             useRef ek React hook hai jo value ya DOM element ko store karta hai without re-render.  
-            - useRef component ko  uncontroled component  bana dete hai              
+            - useRef component ko  uncontroled component  bana dete hai     
+
+            - form me use hota hai -isme submit per hai sari value milegi, baar baar re-render nhi hoga.          
+            useRef ek uncontroled component hai.
+
 
 
 # React event :
@@ -379,3 +383,104 @@ Syntex:
 
 
                         
+# React FORMS:
+
+                              React provides two main ways to work with forms: 
+                              
+                              -Controlled Components and 
+                              -Uncontrolled Components.
+
+
+                             - Controlled components in React are those where the form data is handled by the component's state. The state is the single source of truth, and any changes to the form input are managed through event handlers. 
+                             
+                             Uncontrolled components, 
+
+                             - An Uncontrolled Component is a form element where the form data is handled by the DOM itself rather than the React state. The value of the input field is accessed directly via the DOM using refs.
+
+                              In this approach, React does not control the form’s data. You typically retrieve the value only when needed, such as when the form is submitted.
+                              
+
+                             - Controlled components offer more control and are easier to test, while uncontrolled components can be simpler to implement for basic use cases.
+
+
+# React Context API
+                        The Context API is React’s built-in solution for handling global state. Introduced in React 16.3, it allows you to share state across your component tree without having to pass props manually at every level.
+
+## How Context API Works
+                        With Context API, you create a Context object, which holds the global state. You then wrap your components inside a Provider component, which makes the state available to any component that needs it. Components that consume this state can use the useContext hook to access the data.
+
+
+# State Management in React
+
+                                    when dealing with complex applications where multiple components need to share and access the same data.
+  
+                  Two popular solutions for managing global state in React are the Context API and Redux.
+
+                 https://medium.com/@rashmipatil24/state-management-in-react-b4b2e8c6cb9d
+
+              ######   CONTEXT-API VS REDUX ####
+
+1. What is Context API?
+
+Interview Answer:
+Context API React ka built-in feature hai jo global data share karne ke liye use hota hai aur prop drilling avoid karta hai.
+
+👉 Best for small to medium apps
+👉 Example: Theme, Authentication, Language
+
+🔹 2. What is Redux?
+
+Interview Answer:
+Redux ek external state management library hai jo predictable, centralized aur scalable state provide karti hai.
+
+👉 Best for large & complex apps
+👉 Uses single source of truth
+
+
+| Point       | Context API              | Redux                             |
+| ----------- | ------------------------ | --------------------------------- |
+| Type        | Built-in React feature   | External library                  |
+| App Size    | Small / Medium           | Large / Complex                   |
+| State Flow  | Simple                   | Strict (Action → Reducer → Store) |
+| Performance | Frequent updates me slow | Optimized                         |
+| Debugging   | Limited                  | Excellent (Redux DevTools)        |
+| Boilerplate | Less                     | More                              |
+| Scalability | Limited                  | High                              |
+
+
+
+
+# Conditional Rendering :
+
+                        React me conditional rendering ka matlab hota hai
+                        👉 condition ke basis par UI dikhana ya chhupana
+
+                        1:if / else--
+             if(isLoggedIn){return <Dashboard />;}else{return <Login />;}
+
+                        2:Ternary Operator (Mostly use)--
+                                     {isLoggedIn ? <Dashboard /> : <Login />}
+
+
+# lazy loding :
+
+1} Contextapi -> custom hooks - redux- toolkit - tank
+
+2} profemence -> 
+                  webpack ,useMemo, codespliting ,lazy loding, useCallback, reduce the time of API, pagination, Indexing.
+
+3} Routing -> 
+                  routing, Dynamic routing - outlet, static routing , exact, children 
+
+4} RCLC -> 
+            Mouting phase, updating phase, deleting unmouting and in sab ke methods and constructor, this, this.state, highter order component,
+
+5} Recursion Tree -> folder structure, retry principle
+
+6} Axios, .env file 
+
+7} services, connector, api Routes.
+
+8} MMS -> dynacmic type per kaise file ka size less ya kuch is type se hota hai.
+
+9} Caching -> SSR, OSR
