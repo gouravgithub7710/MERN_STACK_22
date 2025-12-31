@@ -75,7 +75,33 @@ One-line yaad rakhne ke liye:
             npm = Node Package Manager 
 
                   Packages install karne ke kaam aata hai
-                  Project me dependencies add karta hai               
+                  Project me dependencies add karta hai     
+
+
+# Import Export :
+
+            1] import -
+                         jab kaise fn ya varible ko export kiya giya ho jab hai hum import kar sakte hai .
+
+                         ex: 
+                              named export me import ke time per {} me name likhte hai.
+                              export default me import ke time {} ka use nhi karte hai.
+
+
+
+            2] export - 2 type hai :-
+                                     a] named export - ek file ke ander multiple export kar sakte hai.
+                                     ex: export fn sum(x,y){clg(x+y);} 
+
+
+                                     b] export default - single at a time single export karte hai, export default arrow fn ke sath use nhi kar sakte hai.
+                                     ex: 
+                                          export default let y = 20;
+                                          export default y1;
+
+                                          
+      $$$ ../ iska use bhar jana ke liye kiya jata hai.$$$
+                                    
 
 # state :
         kise componenet ka current data (ui me esa data jo kaise variable ke through aa raha hai usse state bolte hai)
@@ -464,7 +490,12 @@ Redux ek external state management library hai jo predictable, centralized aur s
 
 # lazy loding :
 
+
+
+
 1} Contextapi -> custom hooks - redux- toolkit - tank
+
+- Reconsilation 
 
 2} profemence -> 
                   webpack ,useMemo, codespliting ,lazy loding, useCallback, reduce the time of API, pagination, Indexing.
@@ -484,3 +515,4 @@ Redux ek external state management library hai jo predictable, centralized aur s
 8} MMS -> dynacmic type per kaise file ka size less ya kuch is type se hota hai.
 
 9} Caching -> SSR, OSR
+
