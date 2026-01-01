@@ -25,10 +25,21 @@ One-line yaad rakhne ke liye:
 👉 Library = import/export hum karte hain
 👉 Framework = flow & structure framework handle karta hai
 
+----------------------------------------
+ JS - 
+      imperative approach follow karte hai : means step by step focus karte hai.
+
+ React - 
+      declerative approach follow karte hai : kaam karne per focus karte hai using jsx
+-------------------------------
 
 # REACT
 
 - React is declerative aproach follow karte hai: Kaam karne per focus karte hai
+
+## Advantage :
+- open source, component based architecure 
+- SPA : - single page application
 
 - JSX :- combination of HTML and JS
             JSX- JavaScript XML
@@ -43,8 +54,11 @@ One-line yaad rakhne ke liye:
 - states :- 
                   kise bhi component ka data jo ui per dekahi de raha hai and kaise variable ke through aa raha hai 
 
-- Virtual Dom :- ye actual Dom hai :- isse website reload hote hai 
-                - Virtual Dom - actual dom ke carbon copy hota hai : isme puri website reload nhi hote hai 
+- Hooks :
+
+- Virtual Dom :- 
+                  - actual Dom :- isse website reload hote hai 
+                  - Virtual Dom - actual dom ke carbon copy hota hai : isme puri website reload nhi hote hai 
 
 - Reconsization - process of converting actual dom to virtual dom
 - Routing - ek page se dusre page me jane ke liye
@@ -57,8 +71,12 @@ One-line yaad rakhne ke liye:
 -Hooks :- 
               Predefined fun and ye state or side effect ko manage karne ke liye hote hai 
 
-# Fragmanet : 
-             <> </>
+## Disadvantage :
+
+- Not suitable for small project.
+-
+
+
 
 # NPM vs NPX
 
@@ -66,13 +84,15 @@ One-line yaad rakhne ke liye:
 
         npx = Node Package Executor
 
-              Package ko run/execute karta hai
-              Install karna zaroori nahi hota
-              Temporary use ke liye best
+            ek bundel ke form me install karte hai.
+              Package ko run/execute karta hai ek baar me sab 
+              
 
 ## npm kya hota hai?
 
             npm = Node Package Manager 
+
+                  - install one by one install package
 
                   Packages install karne ke kaam aata hai
                   Project me dependencies add karta hai     
@@ -99,19 +119,38 @@ One-line yaad rakhne ke liye:
                                           export default let y = 20;
                                           export default y1;
 
-                                          
-      $$$ ../ iska use bhar jana ke liye kiya jata hai.$$$
-                                    
+                                     c] arrow fn me export default esse jota  hai 
+                                     ex: 
+                                    const sum = ()=>{clg(a+a);}
+                                    export default sum;
 
-# state :
+
+      $$$ ./ iska mtb hai current folder me hai and iske ander ja raha hai.$$$                                 
+      $$$ ../ iska use bhar jana ke liye kiya jata hai.$$$
+
+
+
+# state : current data of component
         kise componenet ka current data (ui me esa data jo kaise variable ke through aa raha hai usse state bolte hai)
 
-## stateLess: {By Default}
+## stateLess: {By Default} : if user perform action on UI but changes not reflect on the UI are called stateless
+
+            normal js ke variable statless hote hai
+
           kise componeent ke data ko change karte hai and vo ui per nhi dekhta hai ussse stateless bolte hai
             kyu ke hum js ke variable use karte hai to stateless hote hai. 
 
 ## stateActive :
            kise componeent ke data ko change karte hai and vo ui per change ho kar dekhta hai ussse stateActive bolte ahi 
+
+
+
+# State vs Props :
+
+## state : current data of component, is mutable 
+
+## props : props is a way where we pass state from one component to other component, is immutable.
+
 
 # Hooks : 
           Pre-Defined funcion hota hai, which is used make stateless to stateactive
@@ -352,17 +391,36 @@ Syntex:
 
                   HOC (Higher Order Component) ek function hota hai jo component ko input me leta hai aur ek naya enhanced component return karta hai.
 
-# Components :
+# Components : -Components are reusable block of code
+
+                  react ke ander jo bhi component  hote hai vo  capital letter se start hote hai  ex: Card.jsx 
 
             -In React, a component represents a part of the user interface, they are the building blocks of any React application.
 
-            -Components are reusable
+            - jo file ka name hota hai vo component ka ka nhi bhi to chalega duara name bhi ho satka hai file name se different.
+            
+            -self closing component : <Header/> -
+                                     Jab component ke andar kuch pass nahi karna ho
 
+            - non self closing component :<Header></Header>/>
+                                          Jab component ke andar content pass karna ho
+      
+## Children keyword :
+                        -children is a special prop in React used to pass content between the opening and closing tags of a component.
+                        -JSX, text, component — sab children ho sakta hai/
+
+            
                   1-Stateless Functional Components
                   2-Stateful Class Components
 
 
+## Fragmanet :  <> </> - used in component
+
+
+
 # Pagination :
+
+
 
                                                 Start
                                                 |
