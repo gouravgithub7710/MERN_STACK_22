@@ -574,19 +574,42 @@ Server Side Rendering (SSR) ek web rendering technique hai jisme web page ka com
 
 # ⚠️ Challenges in React :
 
-1️⃣ Learning Curve – JSX, Hooks aur state samajhna beginners ke liye tough hota hai.
-2️⃣ State Management – Large apps me state handle karna complex ho jata hai.
-3️⃣ SEO Issues – Client Side Rendering ki wajah se SEO weak hoti hai.
-4️⃣ Performance – Extra re-rendering se performance issues aa sakte hain.
-5️⃣ Fast Updates – React ecosystem fast change hota rehta hai.
-6️⃣ Multiple Library Choices-
-Routing, styling, state ke liye bahut saari libraries hone ki wajah se confusion hota hai.
+- 1️⃣ Learning Curve – JSX, Hooks aur state samajhna beginners ke liye tough hota hai.
+
+- 2️⃣ State Management – Large apps me state handle karna complex ho jata hai.
+
+- 3️⃣ SEO Issues – Client Side Rendering ki wajah se SEO weak hoti hai.
+
+- 4️⃣ Performance – Extra re-rendering se performance issues aa sakte hain.
+
+- 5️⃣ Fast Updates – React ecosystem fast change hota rehta hai.
+
+- 6️⃣ Multiple Library Choices- Routing, styling, state ke liye bahut saari libraries hone ki wajah se confusion hota hai.
+
+
+# React Performance Optimization
+
+- React.memo → Unnecessary re-renders roakta hai
+
+- useCallback → Function ko memoize karta hai
+
+- useMemo → Heavy calculation cache karta hai
+
+- Lazy Loading → Components ko jab zarurat ho tab load
+
+- Code Splitting → App ko small bundles me todta hai
+
+- Proper Keys → List rendering fast hoti hai 
+
+- Avoid Extra State → Kam re-rendering
+
 
 
 # lazy loding :
 
 
 
+# IMP TOPICS :
 
 1} Contextapi -> custom hooks - redux- toolkit - tank
 
