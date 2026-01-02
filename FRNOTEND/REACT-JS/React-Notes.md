@@ -133,6 +133,8 @@ One-line yaad rakhne ke liye:
 # state : current data of component
         kise componenet ka current data (ui me esa data jo kaise variable ke through aa raha hai usse state bolte hai)
 
+        *****state are asynchronous******
+
 ## stateLess: {By Default} : if user perform action on UI but changes not reflect on the UI are called stateless
 
             normal js ke variable statless hote hai
@@ -153,20 +155,35 @@ One-line yaad rakhne ke liye:
 
 
 # Hooks : 
-          Pre-Defined funcion hota hai, which is used make stateless to stateactive
+          Pre-Defined funcion hota hai, which provide you kind of functionality.
+          
+          which is used make state stateless to stateactive
           hooks : asynchronous behave karte hai       
-          Hooks fn ke ander likhe jate hai.
+          Hooks fn ke ander likhe jate hai, return ke pahele
 
          ai 
 
 
 
-## useState : 
+## useState : const [count, setCount] = useState('initial value');
+
+            manage single state 
             ye ek hook hai, isko install karna padta hai 
             ek time per ek state change karna hai to useState ka use karte hai  
 
             setData isme ek fn hota hai and isme ye asynchronous hota hai and ye webapi me jata hai.
 
+            array [] of 2 parameter return karta hai - 1st para is initial state of the component, 2nd para is ek funciton hota hai to isko setCount('newvalue') bola jata hai value change karne ke liye
+
+             useState me kuch value nhi dege to vaha undefined aa jata hai, undefined Ui me show nhi hota hai.
+
+            % hamesha 2nd setCount ko kise evnt ke triger hone per hai call kiya jata hai valuechange hone per   and 
+
+            1:onClick={funcationName}  iske ander parameter nhi ho jab use karna hai.
+            2:onClick={arrowFunciton} isko jab use karna hai 
+
+
+           
   ########## 
       Const se bane variable ka reference change nahi hota,
       lekin agar wo object ya array ho to uski properties change ki ja sakti hain.
@@ -176,42 +193,74 @@ One-line yaad rakhne ke liye:
       Const object ke andar ki value change ho sakti hai,
       lekin pura object replace nahi kar sakte.
 
-## useEffect :
-             Api fetch karne ke liye kaam aata hai
+## useReducer : const [state, dispatch] = useReducer(inital,fnReducer)
+                  - use to manage complex state
+                  - It also reduce array of tow parameter
+
+                  isme 1st para inital state hote hai.
+                  isme 2nd para ek function hota hai.
+                  
+
+                  $$ useReducer vs useState $$
+
+                  useState:
+
+                              Simple state ke liye
+                              Easy to use
+                              Small components me best
+
+                  useReducer:
+
+                              Complex state logic ke liye
+                              Centralized state handling
+                              Large components me useful
+
+## useEffect :  useEffect(() => { // side effect code }, [dependencies]);
+            
+            - use to perform side effects means ASYNCHRONOUS task.
+            - it return nothing.
+            - it takes two parameter 
+                  -callback fn ---- this fn is responsible for excute side task.
+                  -Dependency array
+
+            - Api fetch, setTimeout, setInterval, async await esse ASYNCHRONOUS task  karne ke liye kaam aata hai
              
                   useEffect(() => {
                   // side effect code here
                   }, [dependencies]);
 
-                  
+      case-1:  without dependency array
+
+            component ke every rerender(component only rerender when state of component is change)   
              
-            // 1st variety-> without dependency array
-            //agar me useEffect hook ka use without dependency array ke karta hu to mera callback function jo use Effect ke andar likha us compoent ke 
-            //har ek render me excute hoga.
+            without dependency array
+            agar me useEffect hook ka use without dependency array ke karta hu to mera callback function jo use Effect ke andar likha us compoent ke har ek render me excute hoga.
+           
+           
             // useEffect(() => {
             //   console.log("hey I am Jagmohan ")
-            // }) // kaise bhi state ko change karne per useeffect work karta hai ouput deta hai.
+            // }) 
+            
+            // component ke sabbhi state ko change karne per useeffect work karta hai ouput deta hai.
 
 
-            // 2nd variety-> with dependency array which value is empty 
-            // useEffect(() => {
-            //   console.log("hey I am Jagmohan ")
-            // },[])// ek hai chalta hai. state change per bhi nhi chalta hai.
-
-
-            //3rd variety-> dependecny array has some values(states, variable);
+      case-2:   with dependency array without value 
+                -  only first rendering 
 
             // useEffect(() => {
             //   console.log("hey I am Jagmohan ")
-            // }, [data])  // only datat wali state change hone per hai chalega.
+            // },[])
+            
+            // sirf ek bar chalta hai jab first time component render ho raha hai. bar bar state change per nhi chalta hai.
 
 
-            // 4- cleaner component 
-            useEffect(() => {
-            // console.log("hey I am Jagmohan ")
-            return (console.log("hey i will run when component is delete "))
-            }, [data])  // ek baar chalta hai and component delete hone per bhi chalta hai 
+      case-3: dependecny array has some Parameter(run on first render and only dependency array ke parameter ke value change hone per);
 
+            // useEffect(() => {
+            //   console.log("hey I am Jagmohan ")
+            // }, [data])  // only data wali state change hone per hai chalega.
+
+      case-4: ye unmount ke case me kaam aata hai, jab kaise component ko UI se remove karna ho to jab hum case-4 ka use karte hai.
 
 ## useParams() :
                         useParams() dynamic routing implement karne ke liye hota hai.
