@@ -18,10 +18,15 @@
 
 
 // 2️⃣ Web APIsP:-- asynchshronous code web api me store hota hai 
-         //Browser provide karta hai      (setTimeout, fetch, DOM events)
+         //Browser provide karta hai      (setTimeout, fetch, DOM events, localStorage,console,location )
 
 
-// 3️⃣ Task Queue (Macro Queue) : setTimeout, setInterval, DOM events yahan aate hain
+// 3️⃣ Task Queue (Macro Queue)(callback Q) :   
+
+         //(lowpriority)                                 
+          
+    //           setTimeout, setInterval, DOM events yahan aate hain
+
     //setTimout:-task ko delay karna 
       // setTimeout(() => {w
       //   console.log("Hello after 1 second!");
@@ -38,8 +43,8 @@
 // Higher priority queue
 
           // Includes:
-                // Promise.then
-                // catch
+                // Promise.then.catch
+                // fetch
                 // finally
                 // MutationObserver
 
