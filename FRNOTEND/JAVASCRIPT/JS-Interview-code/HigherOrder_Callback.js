@@ -1,3 +1,13 @@
+//Higher-Order Function (HOF)
+
+//A Higher-Order Function is a function that takes another function as an argument or returns a function.
+
+// MAP, FILTER, REDICE are Higher order funciton.
+
+
+//Callback Function
+
+//A Callback Function is a function that is passed as an argument to another function and is called later.
 
 // function callback(x,y){
 //     return x+y;
@@ -111,7 +121,3 @@
 
 
 
-
-function add(a,b){
-  return a+b;
-}
