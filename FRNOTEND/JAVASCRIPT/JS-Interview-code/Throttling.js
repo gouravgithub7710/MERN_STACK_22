@@ -16,6 +16,9 @@
               //Button ko kitni bhi baar click karo,
               //function fixed time (e.g. 2 sec) me sirf ek baar chalega.
 
+//   Throttle:
+// 👉 “Resend OTP” button (2 sec gap)
+
       
               
                     function throttle(fn, delay) {
