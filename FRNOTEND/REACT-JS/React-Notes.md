@@ -61,6 +61,9 @@ One-line yaad rakhne ke liye:
                   - Virtual Dom - actual dom ke carbon copy hota hai : isme puri website reload nhi hote hai 
 
 - Reconsization - process of converting actual dom to virtual dom
+- Defi Algo - comparing karta hai actual dom and virtual dom dono ko.
+
+
 - Routing - ek page se dusre page me jane ke liye
 
 - open sourse and cross platform :-
@@ -263,7 +266,7 @@ One-line yaad rakhne ke liye:
       case-4: ye unmount ke case me kaam aata hai, jab kaise component ko UI se remove karna ho to jab hum case-4 ka use karte hai.
 
 ## useParams() :
-                        useParams() dynamic routing implement karne ke liye hota hai.
+                  useParams() dynamic routing implement karne ke liye hota hai.
                   ye ek obj return karta hai isme url hote hai.
 
 ## useContext() :
@@ -271,7 +274,7 @@ One-line yaad rakhne ke liye:
 
                  ye props driling or lifting ke problem solve karta hai.
 
-                  suitable for small project
+                  $$$suitable for small project$$$
 
            - Context API ke 3 main parts
 
@@ -322,13 +325,43 @@ One-line yaad rakhne ke liye:
                  1: Index.js me file ka context nhi bannana hai, jab State ho index.js file me.
 
 ## useRef :
+      -value to persist(store) karke rakhta hai agar component render hota hai.
+
+      -agar dom tree me se kise ko directly use kana hai vaha useREf kaam aata hai.
+
             useRef ek React hook hai jo value ya DOM element ko store karta hai without re-render.  
             - useRef component ko  uncontroled component  bana dete hai     
 
             - form me use hota hai -isme submit per hai sari value milegi, baar baar re-render nhi hoga.          
             useRef ek uncontroled component hai.
 
+## useMemo :
 
+            useMemo ka use heavy / costly calculations ko cache (yaad) rakhne ke liye hota hai, taaki har render par dubara calculation na ho.
+            Ye performance optimization ke kaam aata hai.
+
+            - ye do parameter leta hai a): callback fn b):[] empty array -> iske ander jo state hota hai ve fisrt render per and array ke ander jo state hote hai vo change hoge tab render hoga.
+
+                              const memoizedValue = useMemo(() => {
+                              // heavy calculation
+                              return value;
+                              }, [dependencies]);
+
+## useCallback :
+
+                        useCallback ka use function ko cache (yaad) rakhne ke liye hota hai, taaki har render par naya function create na ho.
+                        Ye bhi performance optimization ke kaam aata hai.
+
+                                    const memoizedFn = useCallback(() => {
+                                    //function logic
+                                    }, [dependencies]);
+
+                        fn ke refrence ko yaad rakhta hai.
+
+## Custom Hooks : 
+                  made by human and prefix is use
+                ex: useProfileData.jsx  
+      esaa code jo multiple component me use ho raha hai us logic ya code ko custom hook file me likh lo.
 
 # React event :
                   event is a action which is done by user like : click, hover, scroll, load, resize.                 
@@ -371,18 +404,19 @@ One-line yaad rakhne ke liye:
                               <Route>: Define a route for a specific path that renders a component.
 
                               <Link>: Render a navigation link that allows users to navigate without refreshing the page.
-
+                              <NavLink> : using this we can add active className
 ## Dynamic routing:
                         👉 URL ke andar dynamic value (parameter) pass karna
                         aur us value ke base par different data / component render karna.
 
 
-##      using useParams() we implement dynamic routing 
+##      using useParams() we implement for dynamic routing 
 
+            useParams() ka use hum usse componenet me karte hai jaha hum dynamic routing nikalna chatha hai.
 Syntex:
             <Route path="/user/:id" element={<User />} />
                                |
-                        : colon ke badd dynamic rounting ka parameter likha hai.
+                        : colon se start hote hai usse  dynamic rounting ka parameter bola jata hai.
 
 
                         Dynamic routing allows passing parameters in the URL to render different content using a single component.
@@ -392,6 +426,8 @@ Syntex:
                         useParams() se value milti hai
                         Mostly detail pages ke liye use hota hai
 
+
+//nasted routing 
  
 
 ## use Nevigate()
@@ -429,6 +465,8 @@ Syntex:
 
                         React.memo() ek Higher Order Component (HOC) hai jo function components ko unnecessary re-render hone se bachata hai.
 
+      $$$  BTS:  React.memo:- react memo kya karta hai apke props ke aadhar pr component ko yaad karke rakhta hai but agar value primitive hui to nhi render Karega kyuki primitive value ka address hamesha same rehta hai or non premative data type assign karte hai to render Karega kyuki non premative data type ka address change hota hai. $$$                
+
             ### suno jab parent function me state ya prop update ho rhi hai and parent ke ander child bhi hai to us case me parent ke state ya prop change ya update hua hai to parent re-render hoga to uske sath sath bina matlab ke child bhi re-render hoga 
             so isse bachne ke liye hum 
             
@@ -442,7 +480,7 @@ Syntex:
 
 # Components : -Components are reusable block of code
 
-                  react ke ander jo bhi component  hote hai vo  capital letter se start hote hai  ex: Card.jsx 
+                  react ke ander jo bhi component hote hai vo  capital letter se start hote hai  ex: Card.jsx 
 
             -In React, a component represents a part of the user interface, they are the building blocks of any React application.
 
@@ -468,8 +506,6 @@ Syntex:
 
 
 # Pagination :
-
-
 
                                                 Start
                                                 |
@@ -516,7 +552,10 @@ Syntex:
 
 
                         
-# React FORMS:
+# React FORMS: collect the data from input filed.
+
+                - react forms by default Uncontrolled Component hote hai. 
+                - onChange-input ke ander hota hai. and value [ye dono  hona chaiye input ke ander.]     
 
                               React provides two main ways to work with forms: 
                               
@@ -535,6 +574,27 @@ Syntex:
 
                              - Controlled components offer more control and are easier to test, while uncontrolled components can be simpler to implement for basic use cases.
 
+
+             label -> htmlfor='' 
+             input -> type="" id="" placeholder=""
+                  id samename same as htmlfor     
+
+            input me type radio hai to kaise ek per click karne ke liye name="" sab input me same dedo 
+
+            select me option hote hai option me value hote hai jo ke value or content same hote hai. 
+
+
+      $$$
+       1:  input me name="" ander jo value hoge vo state ka name hoga. and 
+      2: value="" ke ander bhi state ka name hoga. isse $$
+
+## useForms :
+             for handling forms 
+
+            register → input ko form se connect karta hai
+            handleSubmit → form submit handle karta hai
+            errors → validation errors store karta hai
+      
 
 # React Context API
                         The Context API is React’s built-in solution for handling global state. Introduced in React 16.3, it allows you to share state across your component tree without having to pass props manually at every level.
@@ -581,6 +641,212 @@ Redux ek external state management library hai jo predictable, centralized aur s
 | Scalability | Limited                  | High                              |
 
 
+## Redux :
+
+            - Redux ek global state management library hai 
+            - It is used for managaing globally state among the component
+            - Good Practice (Readble, simple to implement, easy flow)
+            - redux centralized aur scalable state provide karti hai.
+            - Best for large & complex apps
+            - Uses single source of truth
+
+            :store :- central Reprositry(single source of truth)
+            :slices :- features 
+            :reducer :- functions(JS)
+            :actions :- events
+            :payload :- reduces parameter
+            :state :- kaise bhi component ka current data
+
+
+configerStore - means store create kar rahe hai.
+
+
+                 
+
+
+:slice: ke ander esse fn or variable hote hai jaha 
+
+store ke ander slice hota hai. and slice ke ander features hote hai.
+index.js me store ko provide karte hai.
+
+# REDUX 
+
+
+### 1. Redux kya hai?
+
+      Redux ek state management library hai jo global state ko manage karne ke liye use hoti hai.
+
+      Agar tum props drilling ya state lifting use kar rahe ho → us state ko Context API ya Redux me daal do.
+
+      Small project → Context API sufficient hoti hai
+
+      Medium / Large project → Redux better choice hota hai (scalable & predictable)
+
+## Redux vs Redux toolkit
+
+
+### 2. Redux ke Core Concepts
+🔹 Store
+
+      Store ek central object hota hai jisme poora global state hota hai.
+      App me sirf ek hi store hota hai.
+
+🔹 configureStore
+
+      configureStore() ek function hai jo store object return karta hai.
+      Ye parameter me reducer leta hai.
+
+      Agar multiple slices hain → reducer ke andar object pass karte hain.
+
+      configureStore({
+      reducer: {
+      user: userSlice,
+      cart: cartSlice
+      }
+      })
+
+🔹 Slice
+
+            Slice Redux Toolkit ka concept hai.
+
+            Slice banane ke liye:
+
+            createSlice({
+            name,
+            initialState,
+            reducers
+            })
+
+
+Slice ke parts:
+
+      name → slice ka unique naam
+
+      initialState → slice ka starting data
+
+      reducers → functions (key–value form me)
+
+            ⚠️ Important:
+
+            Reducers arrow function hote hain
+
+            Ye 2 parameters lete hain:
+
+            state or action
+
+🔹 Action
+
+      Action wo hoti hai jo user perform karta hai
+
+      button click, form submit, add to cart, remove, etc.
+
+      Action ke andar data payload me jata hai.
+
+      dispatch(addUser(payload))
+
+🔹 Reducer
+
+            Reducer ek JavaScript function hota hai
+
+            Lekin:
+
+            Isko direct call nahi kar sakte
+
+            function keyword use nahi hota
+
+            Ye slice ke reducers object me hota hai
+
+Reducer ka kaam:
+
+      Purani state + action ke base par new state banana
+
+      (state, action) => {
+      state.value = action.payload
+      }
+
+
+📌 Reducer ko call karne ka flow:
+
+Dispatch → Reducer → Payload → State Update
+
+🔹 Payload
+
+      Reducer ko dispatch karte waqt sirf ek value pass hoti hai
+
+      Multiple values chahiye ho → object ya array pass karo
+
+      dispatch(updateUser({ name, age }))
+
+3. Redux Toolkit & Proxy (Immer)
+
+            Redux Toolkit internally Proxy (Immer) use karta hai
+
+            Is wajah se:
+
+            Tum directly state.value = x likh sakte ho
+
+            Actually Redux immutable copy bana raha hota hai
+
+            current() Agar state ko console me dekhna ho:
+
+            import { current } from "@reduxjs/toolkit";
+            console.log(current(state))
+
+4. Slice ka Name – IMPORTANT
+
+            Jo slice ka name hota hai
+
+            Wahi store me register karte waqt key hoti hai
+
+            name: "user"
+
+            reducer: {
+            user: userReducer
+            }
+
+
+      ❌ Name mismatch → useSelector kaam nahi karega
+
+5. Provider
+
+            Redux store ko React app me available karane ke liye Provider use hota hai
+            Ye main.jsx me wrap hota hai
+
+            <Provider store={store}>
+            <App />
+            </Provider>
+
+6. Hooks in Redux
+🔹 useSelector
+
+      Store / slice se data read karne ke liye
+
+      const user = useSelector(state => state.user)
+
+🔹 useDispatch
+
+      Slice ke reducer (action) ko call / dispatch karne ke liye
+
+      const dispatch = useDispatch();
+      dispatch(addUser(data))
+
+7. Complete Redux FLOW (Step-by-Step)
+
+                  Slice create karo (createSlice)
+
+                  Actions & reducer export karo
+
+                  Store banao (configureStore)
+
+                  Slice ko store me register karo
+
+                  Provider se app ko wrap karo
+
+                  useSelector se data lo
+
+                  useDispatch se reducer call karo
+            
+            
 
 
 # Conditional Rendering :
@@ -636,13 +902,19 @@ Server Side Rendering (SSR) ek web rendering technique hai jisme web page ka com
 - 6️⃣ Multiple Library Choices- Routing, styling, state ke liye bahut saari libraries hone ki wajah se confusion hota hai.
 
 
-# React Performance Optimization
+# React Performance Optimization = Kam re-render + Fast UI + Better UX
 
-- React.memo → Unnecessary re-renders roakta hai
+React application ko fast aur smooth banane ke liye kiya jata hai.
+Iska main aim unnecessary re-rendering ko avoid karna hota hai.
+Performance optimization se page load time kam hota hai aur user experience better hota hai, especially large React applications me.
 
-- useCallback → Function ko memoize karta hai
+ using solve :- child rerendering avoid, heavy calculaition 
 
-- useMemo → Heavy calculation cache karta hai
+- React.memo → Unnecessary re-renders roakta hai - component ko yaad rakhega 
+
+- useCallback → Function ko memoize karta hai - function ko yaddd rakhega 
+
+- useMemo → Heavy calculation cache karta hai - value ko yaad rakhne ke liye 
 
 - Lazy Loading → Components ko jab zarurat ho tab load
 
@@ -655,6 +927,10 @@ Server Side Rendering (SSR) ek web rendering technique hai jisme web page ka com
 
 
 # lazy loding :
+               jisse dekhna hai usse hai load karo means  Components ko jab zarurat ho tab load
+
+fallback
+suspense 
 
 
 
