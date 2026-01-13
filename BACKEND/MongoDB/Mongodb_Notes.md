@@ -3,6 +3,12 @@
     Data JSON jaisa (BSON) format me store hota hai
     Schema-less (flexible)
 
+# npm i mongoose
+    ye ek mongoDB ke library hai jo ke node js se connect karne me help karta hai.
+    
+      Mongoose library ko project me install karne ki command hai.
+      Isse Node.js app MongoDB se connect kar sakti hai.
+
 ---
 
 ### **Database**
