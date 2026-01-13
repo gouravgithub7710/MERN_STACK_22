@@ -161,9 +161,25 @@ Node js vs SpringBOOT
 
 named export - use for multiple file
 export default - use for single file
+---------------------------------------------------------
+
+
+# Backend -
+## Server.js -> server-start 
+## controller -> business logic (DB se data lana kaise hai)
 
 
 
 
+# App is the main (instance) or (object) of backend aplication
 
+
+# Flow 
+
+# Url-> server.js-> routes-> middleware (validation) ->controller-> model ->controller -> UI 
+
+
+# .env file :- inside this we are store [PORT DBURL EMAIL PASSWORD] [DO NOT use let var const] 
+   jab env file me koi changes karte hai uske baad terminal ko kill karna hai and re run karna hai.
+   is file me sirf varibke hai banana hai and direct value assign karna hai.123
 
