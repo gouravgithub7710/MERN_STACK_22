@@ -140,11 +140,12 @@ Node js vs SpringBOOT
 
                   a: model
                   b: routes
-                  c: controller
+                  c: controllers
                   d: connectivity
                   e: middleware
                   f: utils
                   g: templates
+                  e: configuration
 
          5: create below files
             a: server.js
@@ -182,4 +183,6 @@ export default - use for single file
 # .env file :- inside this we are store [PORT DBURL EMAIL PASSWORD] [DO NOT use let var const] 
    jab env file me koi changes karte hai uske baad terminal ko kill karna hai and re run karna hai.
    is file me sirf varibke hai banana hai and direct value assign karna hai.123
+
+
 
